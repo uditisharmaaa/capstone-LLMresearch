@@ -1,0 +1,2601 @@
+generation_id,timestamp,model,model_short,style_index,style_text,full_prompt,tokens_input,tokens_output,tokens_total,cost_usd,response_length_chars,response_length_lines,md5_hash,filename,filepath
+1,2026-02-19T20:28:49Z,openai/gpt-4o,gpt4o,1,"Write in a simple, beginner-friendly style with clear variable names.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a simple, beginner-friendly style with clear variable names.",391,765,1156,0.008627,3160,108,0a1ccb47f3b4fb57c8f917fdf66acae7,gen_0001_gpt4o_01.py,data/raw/gpt4o/gen_0001_gpt4o_01.py
+2,2026-02-19T20:29:01Z,openai/gpt-4o-mini,gpt4mini,2,"Write in a compact style, minimizing lines of code.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a compact style, minimizing lines of code.",389,559,948,0.000394,2034,68,45bc98abaf4d426a3057a4ff743928db,gen_0002_gpt4mini_02.py,data/raw/gpt4mini/gen_0002_gpt4mini_02.py
+3,2026-02-19T20:29:28Z,anthropic/claude-3.5-sonnet,sonnet,3,Write with detailed inline comments explaining every section.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with detailed inline comments explaining every section.",415,1037,1452,0.016800,3324,115,c401a5f19d8a1f6eabdea13b32694275,gen_0003_sonnet_03.py,data/raw/sonnet/gen_0003_sonnet_03.py
+4,2026-02-19T20:29:41Z,openai/gpt-4o,gpt4o,4,Write in a professional style following PEP 8 conventions strictly.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a professional style following PEP 8 conventions strictly.",391,683,1074,0.007808,2768,97,4d47309226c07fd087eac6712c880387,gen_0004_gpt4o_04.py,data/raw/gpt4o/gen_0004_gpt4o_04.py
+5,2026-02-19T20:29:53Z,openai/gpt-4o-mini,gpt4mini,5,Write with descriptive function names and minimal comments.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with descriptive function names and minimal comments.",387,646,1033,0.000446,2585,88,b2d4b29ec5ecc9975c403d7b7c561ca9,gen_0005_gpt4mini_05.py,data/raw/gpt4mini/gen_0005_gpt4mini_05.py
+6,2026-02-19T20:32:32Z,anthropic/claude-3.5-sonnet,sonnet,6,"Write as concisely as possible, avoiding any redundancy.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write as concisely as possible, avoiding any redundancy.",419,762,1181,0.012687,2355,81,dfc37f7877c1f8380bb5d372a05f3957,gen_0006_sonnet_06.py,data/raw/sonnet/gen_0006_sonnet_06.py
+7,2026-02-19T20:32:45Z,openai/gpt-4o,gpt4o,7,"Write in a teaching style, as if explaining to someone learning Python.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a teaching style, as if explaining to someone learning Python.",392,734,1126,0.008320,2971,96,3509400bbcd603cdbb769eec8b2e79c5,gen_0007_gpt4o_07.py,data/raw/gpt4o/gen_0007_gpt4o_07.py
+8,2026-02-19T20:32:59Z,openai/gpt-4o-mini,gpt4mini,8,Write with a focus on code readability over brevity.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a focus on code readability over brevity.",389,724,1113,0.000493,2869,97,aaff87a8a4211f878962fee718d6d30f,gen_0008_gpt4mini_08.py,data/raw/gpt4mini/gen_0008_gpt4mini_08.py
+9,2026-02-19T20:33:17Z,anthropic/claude-3.5-sonnet,sonnet,9,Write using only basic Python features a first-year student would know.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write using only basic Python features a first-year student would know.",420,852,1272,0.014040,2665,98,685461eaa83c6d73b370c2f20b469643,gen_0009_sonnet_09.py,data/raw/sonnet/gen_0009_sonnet_09.py
+10,2026-02-19T20:33:28Z,openai/gpt-4o,gpt4o,10,"Write with a modular structure, breaking everything into small functions.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a modular structure, breaking everything into small functions.",390,736,1126,0.008335,2901,99,48461bd506ce582d5128eb2dfd254271,gen_0010_gpt4o_10.py,data/raw/gpt4o/gen_0010_gpt4o_10.py
+11,2026-02-19T20:33:43Z,openai/gpt-4o-mini,gpt4mini,11,Write with extensive docstrings for every function.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with extensive docstrings for every function.",387,779,1166,0.000525,3043,97,56cc64e3ce41b28ada1c3e770f60889f,gen_0011_gpt4mini_11.py,data/raw/gpt4mini/gen_0011_gpt4mini_11.py
+12,2026-02-19T20:34:02Z,anthropic/claude-3.5-sonnet,sonnet,12,"Write in a functional style, avoiding global variables where possible.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a functional style, avoiding global variables where possible.",418,822,1240,0.013584,2588,95,275a2935af25076fe68cc954a385509e,gen_0012_sonnet_12.py,data/raw/sonnet/gen_0012_sonnet_12.py
+13,2026-02-19T20:34:12Z,openai/gpt-4o,gpt4o,13,Write prioritizing correctness and clarity over elegance.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write prioritizing correctness and clarity over elegance.",387,647,1034,0.007437,2668,88,5a9f4d17f398dc2d7744a0eedebb29e1,gen_0013_gpt4o_13.py,data/raw/gpt4o/gen_0013_gpt4o_13.py
+14,2026-02-19T20:34:27Z,openai/gpt-4o-mini,gpt4mini,14,Write with minimal whitespace and short variable names.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with minimal whitespace and short variable names.",387,553,940,0.000390,2110,64,c2a39aa9a2319d9659bcb74fc94318e4,gen_0014_gpt4mini_14.py,data/raw/gpt4mini/gen_0014_gpt4mini_14.py
+15,2026-02-19T20:34:45Z,anthropic/claude-3.5-sonnet,sonnet,15,"Write in a straightforward, no-frills style.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a straightforward, no-frills style.",418,837,1255,0.013809,2666,94,91fa374bae8c3346b4753443f646b911,gen_0015_sonnet_15.py,data/raw/sonnet/gen_0015_sonnet_15.py
+16,2026-02-19T20:34:54Z,openai/gpt-4o,gpt4o,1,"Write in a simple, beginner-friendly style with clear variable names.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a simple, beginner-friendly style with clear variable names.",391,682,1073,0.007798,2682,92,abae7b701823844eb84008b59dad0509,gen_0016_gpt4o_01.py,data/raw/gpt4o/gen_0016_gpt4o_01.py
+17,2026-02-19T20:35:04Z,openai/gpt-4o-mini,gpt4mini,2,"Write in a compact style, minimizing lines of code.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a compact style, minimizing lines of code.",389,510,899,0.000364,1673,55,536f2579ad72332c7f594b86f2a1ef38,gen_0017_gpt4mini_02.py,data/raw/gpt4mini/gen_0017_gpt4mini_02.py
+18,2026-02-19T20:35:33Z,anthropic/claude-3.5-sonnet,sonnet,3,Write with detailed inline comments explaining every section.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with detailed inline comments explaining every section.",415,1133,1548,0.018240,3820,123,07f5689ca4f5589362dfd73a390b8fc1,gen_0018_sonnet_03.py,data/raw/sonnet/gen_0018_sonnet_03.py
+19,2026-02-19T20:35:42Z,openai/gpt-4o,gpt4o,4,Write in a professional style following PEP 8 conventions strictly.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a professional style following PEP 8 conventions strictly.",391,652,1043,0.007498,2701,97,20154f298a5756dfde4a5fa33cb5a45e,gen_0019_gpt4o_04.py,data/raw/gpt4o/gen_0019_gpt4o_04.py
+20,2026-02-19T20:35:53Z,openai/gpt-4o-mini,gpt4mini,5,Write with descriptive function names and minimal comments.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with descriptive function names and minimal comments.",387,655,1042,0.000451,2500,87,ee04932b2101947f8a7653d22373161d,gen_0020_gpt4mini_05.py,data/raw/gpt4mini/gen_0020_gpt4mini_05.py
+21,2026-02-19T20:36:13Z,anthropic/claude-3.5-sonnet,sonnet,6,"Write as concisely as possible, avoiding any redundancy.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write as concisely as possible, avoiding any redundancy.",419,798,1217,0.013227,2556,89,74dfdb0f9adf41a9854ae8e92aef0674,gen_0021_sonnet_06.py,data/raw/sonnet/gen_0021_sonnet_06.py
+22,2026-02-19T20:36:21Z,openai/gpt-4o,gpt4o,7,"Write in a teaching style, as if explaining to someone learning Python.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a teaching style, as if explaining to someone learning Python.",392,672,1064,0.007700,2745,96,7f7ffaf8f864781576a8b4d8bfad316d,gen_0022_gpt4o_07.py,data/raw/gpt4o/gen_0022_gpt4o_07.py
+23,2026-02-19T20:36:32Z,openai/gpt-4o-mini,gpt4mini,8,Write with a focus on code readability over brevity.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a focus on code readability over brevity.",389,712,1101,0.000486,2797,87,c9c3d95b165c04e9db6c092580e34bd9,gen_0023_gpt4mini_08.py,data/raw/gpt4mini/gen_0023_gpt4mini_08.py
+24,2026-02-19T20:40:41Z,anthropic/claude-3.5-sonnet,sonnet,9,Write using only basic Python features a first-year student would know.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write using only basic Python features a first-year student would know.",420,911,1331,0.014925,2995,106,4a6cce7e2a48dceb2b1a87b5683d2f75,gen_0024_sonnet_09.py,data/raw/sonnet/gen_0024_sonnet_09.py
+25,2026-02-19T20:40:51Z,openai/gpt-4o,gpt4o,10,"Write with a modular structure, breaking everything into small functions.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a modular structure, breaking everything into small functions.",390,819,1209,0.009165,3337,108,f72bceb54787be766fdd40c7fe852ad2,gen_0025_gpt4o_10.py,data/raw/gpt4o/gen_0025_gpt4o_10.py
+26,2026-02-19T20:41:12Z,openai/gpt-4o-mini,gpt4mini,11,Write with extensive docstrings for every function.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with extensive docstrings for every function.",387,981,1368,0.000647,4085,126,423a1b9764b8811ec64c4bd06569573f,gen_0026_gpt4mini_11.py,data/raw/gpt4mini/gen_0026_gpt4mini_11.py
+27,2026-02-19T20:41:37Z,anthropic/claude-3.5-sonnet,sonnet,12,"Write in a functional style, avoiding global variables where possible.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a functional style, avoiding global variables where possible.",418,1132,1550,0.018234,3588,130,74c781d75edfa0eff6f0b1a1110dace1,gen_0027_sonnet_12.py,data/raw/sonnet/gen_0027_sonnet_12.py
+28,2026-02-19T20:41:46Z,openai/gpt-4o,gpt4o,13,Write prioritizing correctness and clarity over elegance.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write prioritizing correctness and clarity over elegance.",387,686,1073,0.007828,2695,90,2fd0ce6cff20c304d8348bbb5e4b41ee,gen_0028_gpt4o_13.py,data/raw/gpt4o/gen_0028_gpt4o_13.py
+29,2026-02-19T20:41:59Z,openai/gpt-4o-mini,gpt4mini,14,Write with minimal whitespace and short variable names.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with minimal whitespace and short variable names.",387,570,957,0.000400,1985,58,08a4674a54ec4100c5e9f0c54dfdc15e,gen_0029_gpt4mini_14.py,data/raw/gpt4mini/gen_0029_gpt4mini_14.py
+30,2026-02-19T20:42:39Z,anthropic/claude-3.5-sonnet,sonnet,15,"Write in a straightforward, no-frills style.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a straightforward, no-frills style.",418,843,1261,0.013899,2638,98,85c2d107ac396995b182cb905337a411,gen_0030_sonnet_15.py,data/raw/sonnet/gen_0030_sonnet_15.py
+31,2026-02-19T20:42:59Z,openai/gpt-4o,gpt4o,1,"Write in a simple, beginner-friendly style with clear variable names.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a simple, beginner-friendly style with clear variable names.",391,668,1059,0.007658,2756,98,8f5735c3413a07211c157a59d12ebc43,gen_0031_gpt4o_01.py,data/raw/gpt4o/gen_0031_gpt4o_01.py
+32,2026-02-19T20:43:09Z,openai/gpt-4o-mini,gpt4mini,2,"Write in a compact style, minimizing lines of code.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a compact style, minimizing lines of code.",389,531,920,0.000377,1977,56,46c471509979f30ab51a9ebf64450d13,gen_0032_gpt4mini_02.py,data/raw/gpt4mini/gen_0032_gpt4mini_02.py
+33,2026-02-19T20:43:21Z,openai/gpt-4o,gpt4o,3,Write with detailed inline comments explaining every section.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with detailed inline comments explaining every section.",387,891,1278,0.009877,3585,123,fe149d8c38ee38691311203ed661153f,gen_0033_gpt4o_03.py,data/raw/gpt4o/gen_0033_gpt4o_03.py
+34,2026-02-19T20:43:36Z,openai/gpt-4o-mini,gpt4mini,4,Write in a professional style following PEP 8 conventions strictly.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a professional style following PEP 8 conventions strictly.",391,630,1021,0.000437,2460,82,53af45bdf101c200bf258d556930c1fe,gen_0034_gpt4mini_04.py,data/raw/gpt4mini/gen_0034_gpt4mini_04.py
+35,2026-02-19T20:43:48Z,openai/gpt-4o,gpt4o,5,Write with descriptive function names and minimal comments.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with descriptive function names and minimal comments.",387,867,1254,0.009638,3346,110,fef58ff2ceeaf0969d7ee1abe835ddff,gen_0035_gpt4o_05.py,data/raw/gpt4o/gen_0035_gpt4o_05.py
+36,2026-02-19T20:43:59Z,openai/gpt-4o-mini,gpt4mini,6,"Write as concisely as possible, avoiding any redundancy.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write as concisely as possible, avoiding any redundancy.",390,561,951,0.000395,2139,74,06ee90e3e56e97feec7d584a7a41dfc6,gen_0036_gpt4mini_06.py,data/raw/gpt4mini/gen_0036_gpt4mini_06.py
+37,2026-02-19T20:44:12Z,openai/gpt-4o,gpt4o,7,"Write in a teaching style, as if explaining to someone learning Python.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a teaching style, as if explaining to someone learning Python.",392,774,1166,0.008720,3125,107,d474c9f44fa9cb1ce2dbff056324543d,gen_0037_gpt4o_07.py,data/raw/gpt4o/gen_0037_gpt4o_07.py
+38,2026-02-19T20:44:25Z,openai/gpt-4o-mini,gpt4mini,8,Write with a focus on code readability over brevity.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a focus on code readability over brevity.",389,715,1104,0.000487,2826,95,5ca7a2b14de0e4d7aa9183c865b53e71,gen_0038_gpt4mini_08.py,data/raw/gpt4mini/gen_0038_gpt4mini_08.py
+39,2026-02-19T20:44:35Z,openai/gpt-4o,gpt4o,9,Write using only basic Python features a first-year student would know.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write using only basic Python features a first-year student would know.",391,731,1122,0.008287,3021,97,a378e9fd5dfda0bead1744f8b46ea503,gen_0039_gpt4o_09.py,data/raw/gpt4o/gen_0039_gpt4o_09.py
+40,2026-02-19T20:44:48Z,openai/gpt-4o-mini,gpt4mini,10,"Write with a modular structure, breaking everything into small functions.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a modular structure, breaking everything into small functions.",390,683,1073,0.000468,2683,96,76a14af2597a71e011e0b17ecee64b83,gen_0040_gpt4mini_10.py,data/raw/gpt4mini/gen_0040_gpt4mini_10.py
+41,2026-02-19T20:45:01Z,openai/gpt-4o,gpt4o,11,Write with extensive docstrings for every function.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with extensive docstrings for every function.",387,792,1179,0.008887,3301,101,ef1437067761989725957d1e0a121b7e,gen_0041_gpt4o_11.py,data/raw/gpt4o/gen_0041_gpt4o_11.py
+42,2026-02-19T20:45:15Z,openai/gpt-4o-mini,gpt4mini,12,"Write in a functional style, avoiding global variables where possible.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a functional style, avoiding global variables where possible.",390,658,1048,0.000453,2545,85,af8bfc4c3121d9ac3280d5c737834c7f,gen_0042_gpt4mini_12.py,data/raw/gpt4mini/gen_0042_gpt4mini_12.py
+43,2026-02-19T20:45:26Z,openai/gpt-4o,gpt4o,13,Write prioritizing correctness and clarity over elegance.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write prioritizing correctness and clarity over elegance.",387,682,1069,0.007788,2736,96,4b85ac8eff6ae9177ec914813eef4110,gen_0043_gpt4o_13.py,data/raw/gpt4o/gen_0043_gpt4o_13.py
+44,2026-02-19T20:45:37Z,openai/gpt-4o-mini,gpt4mini,14,Write with minimal whitespace and short variable names.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with minimal whitespace and short variable names.",387,517,904,0.000368,1503,62,d0ae3fa4f6443b32f1a591b02a2207e1,gen_0044_gpt4mini_14.py,data/raw/gpt4mini/gen_0044_gpt4mini_14.py
+45,2026-02-19T20:45:48Z,openai/gpt-4o,gpt4o,15,"Write in a straightforward, no-frills style.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a straightforward, no-frills style.",388,767,1155,0.008640,2720,87,3106ea809808e6458fbf1c26ba2be297,gen_0045_gpt4o_15.py,data/raw/gpt4o/gen_0045_gpt4o_15.py
+46,2026-02-19T20:46:03Z,openai/gpt-4o-mini,gpt4mini,1,"Write in a simple, beginner-friendly style with clear variable names.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a simple, beginner-friendly style with clear variable names.",391,646,1037,0.000446,2538,92,88abac606b9a15fe3ebf2cd997fbb049,gen_0046_gpt4mini_01.py,data/raw/gpt4mini/gen_0046_gpt4mini_01.py
+47,2026-02-19T20:46:12Z,openai/gpt-4o,gpt4o,2,"Write in a compact style, minimizing lines of code.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a compact style, minimizing lines of code.",389,631,1020,0.007283,2241,62,d95602fb45d0769ac1665ebb71f4634d,gen_0047_gpt4o_02.py,data/raw/gpt4o/gen_0047_gpt4o_02.py
+48,2026-02-19T20:46:35Z,openai/gpt-4o-mini,gpt4mini,3,Write with detailed inline comments explaining every section.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with detailed inline comments explaining every section.",387,840,1227,0.000562,3308,96,364112b030107dd7572bcc7a31a2b20c,gen_0048_gpt4mini_03.py,data/raw/gpt4mini/gen_0048_gpt4mini_03.py
+49,2026-02-19T20:46:46Z,openai/gpt-4o,gpt4o,4,Write in a professional style following PEP 8 conventions strictly.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a professional style following PEP 8 conventions strictly.",391,835,1226,0.009327,3136,103,980c45f75ec17d3b7e6e27177bb89675,gen_0049_gpt4o_04.py,data/raw/gpt4o/gen_0049_gpt4o_04.py
+50,2026-02-19T20:47:01Z,openai/gpt-4o-mini,gpt4mini,5,Write with descriptive function names and minimal comments.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with descriptive function names and minimal comments.",387,745,1132,0.000505,2958,104,6620524f274180582e0ed6634f5a63f0,gen_0050_gpt4mini_05.py,data/raw/gpt4mini/gen_0050_gpt4mini_05.py
+51,2026-02-19T20:47:08Z,openai/gpt-4o,gpt4o,6,"Write as concisely as possible, avoiding any redundancy.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write as concisely as possible, avoiding any redundancy.",390,572,962,0.006695,2215,73,6f395d16cb695d4d4f93f5f262568006,gen_0051_gpt4o_06.py,data/raw/gpt4o/gen_0051_gpt4o_06.py
+52,2026-02-19T20:47:19Z,openai/gpt-4o,gpt4o,7,"Write in a teaching style, as if explaining to someone learning Python.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a teaching style, as if explaining to someone learning Python.",392,670,1062,0.007680,2681,87,6d917e32818a7dbdbc17df7f2d922ca8,gen_0052_gpt4o_07.py,data/raw/gpt4o/gen_0052_gpt4o_07.py
+53,2026-02-19T20:47:30Z,openai/gpt-4o,gpt4o,8,Write with a focus on code readability over brevity.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a focus on code readability over brevity.",389,673,1062,0.007703,2794,99,3d83c1d8669bc133ee5318f18350c911,gen_0053_gpt4o_08.py,data/raw/gpt4o/gen_0053_gpt4o_08.py
+54,2026-02-19T20:47:41Z,openai/gpt-4o,gpt4o,9,Write using only basic Python features a first-year student would know.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write using only basic Python features a first-year student would know.",391,729,1120,0.008268,2865,98,567946127e86f6b09f652ad40e730139,gen_0054_gpt4o_09.py,data/raw/gpt4o/gen_0054_gpt4o_09.py
+55,2026-02-19T20:47:51Z,openai/gpt-4o,gpt4o,10,"Write with a modular structure, breaking everything into small functions.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a modular structure, breaking everything into small functions.",390,683,1073,0.007805,2759,98,07f93ed25feba9a643af0f499fb7e23e,gen_0055_gpt4o_10.py,data/raw/gpt4o/gen_0055_gpt4o_10.py
+56,2026-02-19T20:48:02Z,openai/gpt-4o,gpt4o,11,Write with extensive docstrings for every function.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with extensive docstrings for every function.",387,894,1281,0.009907,3724,110,7bf1995ae08be4882f74adb494b59559,gen_0056_gpt4o_11.py,data/raw/gpt4o/gen_0056_gpt4o_11.py
+57,2026-02-19T20:48:15Z,openai/gpt-4o,gpt4o,12,"Write in a functional style, avoiding global variables where possible.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a functional style, avoiding global variables where possible.",390,584,974,0.006815,2224,75,4fa1177c2869c3a6119073c1b970ad9e,gen_0057_gpt4o_12.py,data/raw/gpt4o/gen_0057_gpt4o_12.py
+58,2026-02-19T20:48:30Z,openai/gpt-4o,gpt4o,13,Write prioritizing correctness and clarity over elegance.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write prioritizing correctness and clarity over elegance.",387,901,1288,0.009978,3368,107,84b2ea57db895e19209113abccbdc4b4,gen_0058_gpt4o_13.py,data/raw/gpt4o/gen_0058_gpt4o_13.py
+59,2026-02-19T20:48:42Z,openai/gpt-4o,gpt4o,14,Write with minimal whitespace and short variable names.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with minimal whitespace and short variable names.",387,525,912,0.006218,1815,65,9516f17d0e987d82283ecbc522eb7542,gen_0059_gpt4o_14.py,data/raw/gpt4o/gen_0059_gpt4o_14.py
+60,2026-02-19T20:48:56Z,openai/gpt-4o,gpt4o,15,"Write in a straightforward, no-frills style.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a straightforward, no-frills style.",388,639,1027,0.007360,2566,82,317f8ae974659505295fde084d50cb61,gen_0060_gpt4o_15.py,data/raw/gpt4o/gen_0060_gpt4o_15.py
+61,2026-02-19T20:51:46Z,openai/gpt-4o,gpt4o,1,"Write in a simple, beginner-friendly style with clear variable names.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a simple, beginner-friendly style with clear variable names.",391,668,1059,0.007658,2672,94,3626357e1597d26fbf59926a6da4712c,gen_0061_gpt4o_01.py,data/raw/gpt4o/gen_0061_gpt4o_01.py
+62,2026-02-19T20:51:56Z,openai/gpt-4o,gpt4o,2,"Write in a compact style, minimizing lines of code.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a compact style, minimizing lines of code.",389,513,902,0.006103,1891,68,c37d5ca5c9ba5ae8bad6b2bd0a40c5e0,gen_0062_gpt4o_02.py,data/raw/gpt4o/gen_0062_gpt4o_02.py
+63,2026-02-19T20:52:12Z,openai/gpt-4o,gpt4o,3,Write with detailed inline comments explaining every section.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with detailed inline comments explaining every section.",387,1045,1432,0.011417,4124,128,e191dddda06e1ddd11063bdcfe6eae2c,gen_0063_gpt4o_03.py,data/raw/gpt4o/gen_0063_gpt4o_03.py
+64,2026-02-19T20:52:24Z,openai/gpt-4o,gpt4o,4,Write in a professional style following PEP 8 conventions strictly.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a professional style following PEP 8 conventions strictly.",391,737,1128,0.008348,3037,112,4cc910ae6c2b463b0a2a8410a63f7155,gen_0064_gpt4o_04.py,data/raw/gpt4o/gen_0064_gpt4o_04.py
+65,2026-02-19T20:52:40Z,openai/gpt-4o,gpt4o,5,Write with descriptive function names and minimal comments.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with descriptive function names and minimal comments.",387,739,1126,0.008358,2853,99,514bb4fcb8060b85f9045a77de4d99dd,gen_0065_gpt4o_05.py,data/raw/gpt4o/gen_0065_gpt4o_05.py
+66,2026-02-19T20:52:54Z,openai/gpt-4o,gpt4o,6,"Write as concisely as possible, avoiding any redundancy.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write as concisely as possible, avoiding any redundancy.",390,560,950,0.006575,2141,75,697b7540d6053c0eb1b8e15321449ac5,gen_0066_gpt4o_06.py,data/raw/gpt4o/gen_0066_gpt4o_06.py
+67,2026-02-19T20:53:06Z,openai/gpt-4o,gpt4o,7,"Write in a teaching style, as if explaining to someone learning Python.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a teaching style, as if explaining to someone learning Python.",392,654,1046,0.007520,2602,88,6db731490a642242155d8f3df033cae6,gen_0067_gpt4o_07.py,data/raw/gpt4o/gen_0067_gpt4o_07.py
+68,2026-02-19T20:53:17Z,openai/gpt-4o,gpt4o,8,Write with a focus on code readability over brevity.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a focus on code readability over brevity.",389,684,1073,0.007812,2866,93,1b4f1305d2ad60a560c07b09a3e3fba6,gen_0068_gpt4o_08.py,data/raw/gpt4o/gen_0068_gpt4o_08.py
+69,2026-02-19T20:59:13Z,openai/gpt-4o,gpt4o,9,Write using only basic Python features a first-year student would know.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write using only basic Python features a first-year student would know.",391,631,1022,0.007288,2450,83,ee2cc8ffe841df6ec03e30122a0460c6,gen_0069_gpt4o_09.py,data/raw/gpt4o/gen_0069_gpt4o_09.py
+70,2026-02-19T20:59:24Z,openai/gpt-4o,gpt4o,10,"Write with a modular structure, breaking everything into small functions.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a modular structure, breaking everything into small functions.",390,726,1116,0.008235,2868,103,deb9dd841a122625f555b212e00d7ae9,gen_0070_gpt4o_10.py,data/raw/gpt4o/gen_0070_gpt4o_10.py
+71,2026-02-19T20:59:34Z,openai/gpt-4o,gpt4o,11,Write with extensive docstrings for every function.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with extensive docstrings for every function.",387,717,1104,0.008138,2795,92,e62466d2ff516e409a674f5e068dd8be,gen_0071_gpt4o_11.py,data/raw/gpt4o/gen_0071_gpt4o_11.py
+72,2026-02-19T20:59:44Z,openai/gpt-4o,gpt4o,12,"Write in a functional style, avoiding global variables where possible.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a functional style, avoiding global variables where possible.",390,680,1070,0.007775,2709,89,6f2c902f325283fcc8a9d5dcddac6f15,gen_0072_gpt4o_12.py,data/raw/gpt4o/gen_0072_gpt4o_12.py
+73,2026-02-19T20:59:54Z,openai/gpt-4o,gpt4o,13,Write prioritizing correctness and clarity over elegance.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write prioritizing correctness and clarity over elegance.",387,734,1121,0.008308,3015,100,ccd9f14930d0e2574aac28c4862af53a,gen_0073_gpt4o_13.py,data/raw/gpt4o/gen_0073_gpt4o_13.py
+74,2026-02-19T21:00:03Z,openai/gpt-4o,gpt4o,14,Write with minimal whitespace and short variable names.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with minimal whitespace and short variable names.",387,699,1086,0.007957,2473,87,4938b59fc973bd573ddcc99d38e2c2c1,gen_0074_gpt4o_14.py,data/raw/gpt4o/gen_0074_gpt4o_14.py
+75,2026-02-19T21:00:13Z,openai/gpt-4o,gpt4o,15,"Write in a straightforward, no-frills style.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a straightforward, no-frills style.",388,631,1019,0.007280,2432,81,2d8f52600a81cb888fd7adf1f1d8b063,gen_0075_gpt4o_15.py,data/raw/gpt4o/gen_0075_gpt4o_15.py
+76,2026-02-19T21:00:26Z,openai/gpt-4o,gpt4o,1,"Write in a simple, beginner-friendly style with clear variable names.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a simple, beginner-friendly style with clear variable names.",391,770,1161,0.008678,3048,101,168b6cec4b57b358bb2e770f710f6bbf,gen_0076_gpt4o_01.py,data/raw/gpt4o/gen_0076_gpt4o_01.py
+77,2026-02-19T21:00:37Z,openai/gpt-4o,gpt4o,2,"Write in a compact style, minimizing lines of code.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a compact style, minimizing lines of code.",389,552,941,0.006493,2038,63,124fb6698df469ff93e0a4c1aaee161a,gen_0077_gpt4o_02.py,data/raw/gpt4o/gen_0077_gpt4o_02.py
+78,2026-02-19T21:00:51Z,openai/gpt-4o,gpt4o,3,Write with detailed inline comments explaining every section.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with detailed inline comments explaining every section.",387,830,1217,0.009267,3367,104,76b11f7d60107f3f01ff16a16e1b3004,gen_0078_gpt4o_03.py,data/raw/gpt4o/gen_0078_gpt4o_03.py
+79,2026-02-19T21:01:02Z,openai/gpt-4o,gpt4o,4,Write in a professional style following PEP 8 conventions strictly.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a professional style following PEP 8 conventions strictly.",391,704,1095,0.008018,2749,88,47149877c3de96b4dd484d55fcfffdc8,gen_0079_gpt4o_04.py,data/raw/gpt4o/gen_0079_gpt4o_04.py
+80,2026-02-19T21:01:14Z,openai/gpt-4o,gpt4o,5,Write with descriptive function names and minimal comments.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with descriptive function names and minimal comments.",387,670,1057,0.007668,2713,90,44f71316834ba78d15072aad9a4bd85a,gen_0080_gpt4o_05.py,data/raw/gpt4o/gen_0080_gpt4o_05.py
+81,2026-02-19T21:01:25Z,openai/gpt-4o,gpt4o,6,"Write as concisely as possible, avoiding any redundancy.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write as concisely as possible, avoiding any redundancy.",390,664,1054,0.007615,2449,84,98e711454617fbcc16fdd05da1aa9d9b,gen_0081_gpt4o_06.py,data/raw/gpt4o/gen_0081_gpt4o_06.py
+82,2026-02-19T21:01:35Z,openai/gpt-4o,gpt4o,7,"Write in a teaching style, as if explaining to someone learning Python.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a teaching style, as if explaining to someone learning Python.",392,697,1089,0.007950,2768,96,d927204534a5eac66a4603dc34640ed5,gen_0082_gpt4o_07.py,data/raw/gpt4o/gen_0082_gpt4o_07.py
+83,2026-02-19T21:01:45Z,openai/gpt-4o,gpt4o,8,Write with a focus on code readability over brevity.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a focus on code readability over brevity.",389,724,1113,0.008212,2963,100,de2c4d254554893b741ce61a2e4e6bbd,gen_0083_gpt4o_08.py,data/raw/gpt4o/gen_0083_gpt4o_08.py
+84,2026-02-19T21:02:00Z,openai/gpt-4o,gpt4o,9,Write using only basic Python features a first-year student would know.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write using only basic Python features a first-year student would know.",391,663,1054,0.007608,2620,91,35b3df37ead902a9678067e220e4c651,gen_0084_gpt4o_09.py,data/raw/gpt4o/gen_0084_gpt4o_09.py
+85,2026-02-19T21:02:12Z,openai/gpt-4o,gpt4o,10,"Write with a modular structure, breaking everything into small functions.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a modular structure, breaking everything into small functions.",390,721,1111,0.008185,2804,92,58c945a9c67c9e61e2d1e6481291d56e,gen_0085_gpt4o_10.py,data/raw/gpt4o/gen_0085_gpt4o_10.py
+86,2026-02-19T21:02:24Z,openai/gpt-4o,gpt4o,11,Write with extensive docstrings for every function.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with extensive docstrings for every function.",387,837,1224,0.009338,3563,105,6f529eee1347cb276162f06ae165bde0,gen_0086_gpt4o_11.py,data/raw/gpt4o/gen_0086_gpt4o_11.py
+87,2026-02-19T21:02:35Z,openai/gpt-4o,gpt4o,12,"Write in a functional style, avoiding global variables where possible.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a functional style, avoiding global variables where possible.",390,694,1084,0.007915,2931,100,a5de6fcea9195e17d3b2c611a8239eef,gen_0087_gpt4o_12.py,data/raw/gpt4o/gen_0087_gpt4o_12.py
+88,2026-02-19T21:02:45Z,openai/gpt-4o,gpt4o,13,Write prioritizing correctness and clarity over elegance.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write prioritizing correctness and clarity over elegance.",387,704,1091,0.008007,2800,100,471fe14d5c71e37314baee2e60c2330b,gen_0088_gpt4o_13.py,data/raw/gpt4o/gen_0088_gpt4o_13.py
+89,2026-02-19T21:03:09Z,openai/gpt-4o,gpt4o,14,Write with minimal whitespace and short variable names.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with minimal whitespace and short variable names.",387,468,855,0.005647,1663,63,84235aa29aefa6d613c4fff1c23556c0,gen_0089_gpt4o_14.py,data/raw/gpt4o/gen_0089_gpt4o_14.py
+90,2026-02-19T21:03:21Z,openai/gpt-4o,gpt4o,15,"Write in a straightforward, no-frills style.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a straightforward, no-frills style.",388,765,1153,0.008620,2889,85,79bd79ba32998aec2558c5be0b1267f6,gen_0090_gpt4o_15.py,data/raw/gpt4o/gen_0090_gpt4o_15.py
+91,2026-02-19T21:03:35Z,openai/gpt-4o,gpt4o,1,"Write in a simple, beginner-friendly style with clear variable names.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a simple, beginner-friendly style with clear variable names.",391,826,1217,0.009237,3158,97,6205ae2f7ab6d17b044fcdc6d4c56411,gen_0091_gpt4o_01.py,data/raw/gpt4o/gen_0091_gpt4o_01.py
+92,2026-02-19T21:03:45Z,openai/gpt-4o,gpt4o,2,"Write in a compact style, minimizing lines of code.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a compact style, minimizing lines of code.",389,595,984,0.006922,2353,83,9d0da9f15c9ed56ded76bdf1c5a240b3,gen_0092_gpt4o_02.py,data/raw/gpt4o/gen_0092_gpt4o_02.py
+93,2026-02-19T21:03:59Z,openai/gpt-4o,gpt4o,3,Write with detailed inline comments explaining every section.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with detailed inline comments explaining every section.",387,996,1383,0.010927,4025,107,f406b792ae37a5ea1151ec9e2a0f1ff8,gen_0093_gpt4o_03.py,data/raw/gpt4o/gen_0093_gpt4o_03.py
+94,2026-02-19T21:04:13Z,openai/gpt-4o,gpt4o,4,Write in a professional style following PEP 8 conventions strictly.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a professional style following PEP 8 conventions strictly.",391,807,1198,0.009047,3225,107,f6f77dfe327a38cd2f57ecc0c8d84401,gen_0094_gpt4o_04.py,data/raw/gpt4o/gen_0094_gpt4o_04.py
+95,2026-02-19T21:04:23Z,openai/gpt-4o,gpt4o,5,Write with descriptive function names and minimal comments.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with descriptive function names and minimal comments.",387,612,999,0.007088,2348,78,9b57ab5dc39833788b180e5669cb6f92,gen_0095_gpt4o_05.py,data/raw/gpt4o/gen_0095_gpt4o_05.py
+96,2026-02-19T21:04:33Z,openai/gpt-4o,gpt4o,6,"Write as concisely as possible, avoiding any redundancy.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write as concisely as possible, avoiding any redundancy.",390,596,986,0.006935,2279,70,3642848228c9965104793b83b7a42dd9,gen_0096_gpt4o_06.py,data/raw/gpt4o/gen_0096_gpt4o_06.py
+97,2026-02-19T21:04:54Z,openai/gpt-4o,gpt4o,7,"Write in a teaching style, as if explaining to someone learning Python.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write in a teaching style, as if explaining to someone learning Python.",392,744,1136,0.008420,2980,96,da77e80e2a7ae5e8f9e72850a9e49db8,gen_0097_gpt4o_07.py,data/raw/gpt4o/gen_0097_gpt4o_07.py
+98,2026-02-19T21:05:06Z,openai/gpt-4o,gpt4o,8,Write with a focus on code readability over brevity.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a focus on code readability over brevity.",389,847,1236,0.009442,3138,102,f40e79e4bc3836b30db85f0b888999ce,gen_0098_gpt4o_08.py,data/raw/gpt4o/gen_0098_gpt4o_08.py
+99,2026-02-19T21:05:17Z,openai/gpt-4o,gpt4o,9,Write using only basic Python features a first-year student would know.,"You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write using only basic Python features a first-year student would know.",391,797,1188,0.008948,3096,96,86882db4af95aa994b13a0d9429dab1d,gen_0099_gpt4o_09.py,data/raw/gpt4o/gen_0099_gpt4o_09.py
+100,2026-02-19T21:05:30Z,openai/gpt-4o,gpt4o,10,"Write with a modular structure, breaking everything into small functions.","You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers ""X"" and ""O""
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G before the game starts and after each turn
+6. Clear the screen before printing using os.system('clear')
+7. Players input an uppercase letter (A-G) to choose a column
+8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again
+9. Drop the checker to the lowest available row in the chosen column
+10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally
+11. If the board fills with no winner, declare a draw
+12. When a player wins, print ""[Player] won!"" and end the game
+
+The board must look exactly like this format:
+   A   B   C   D   E   F   G
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+
+
+Provide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.
+
+Write with a modular structure, breaking everything into small functions.",390,774,1164,0.008715,3162,107,ff7a98753da26a5f0e3e9c2799d2dc91,gen_0100_gpt4o_10.py,data/raw/gpt4o/gen_0100_gpt4o_10.py

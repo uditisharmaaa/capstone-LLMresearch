@@ -1,0 +1,220 @@
+Testing API connectivity … OK — model replied: 'Hello!'
+
+==================================================
+GENERATION PLAN
+==================================================
+Total generations : 100
+Model breakdown   :
+  openai/gpt-4o: 70  →  data/raw/gpt4o/
+  openai/gpt-4o-mini: 20  →  data/raw/gpt4mini/
+  anthropic/claude-3.5-sonnet: 10  →  data/raw/sonnet/
+Style breakdown   :
+  Style 01: 7
+  Style 02: 7
+  Style 03: 7
+  Style 04: 7
+  Style 05: 7
+  Style 06: 7
+  Style 07: 7
+  Style 08: 7
+  Style 09: 7
+  Style 10: 7
+  Style 11: 6
+  Style 12: 6
+  Style 13: 6
+  Style 14: 6
+  Style 15: 6
+Estimated cost    : $1.70  (budget: $6.00)
+Estimated time    : ~11 minutes
+Provenance        : header comment + .json sidecar per file
+==================================================
+
+Resuming – skipping 29 already-completed generation(s).
+  [OK  ] [ 30/100]  30.0%  id=0030  sonnet  style=15  cost=$0.2346
+  [OK  ] [ 31/100]  31.0%  id=0031  gpt4o  style=01  cost=$0.2422
+  [OK  ] [ 32/100]  32.0%  id=0032  gpt4mini  style=02  cost=$0.2426
+  [OK  ] [ 33/100]  33.0%  id=0033  gpt4o  style=03  cost=$0.2525
+  [OK  ] [ 34/100]  34.0%  id=0034  gpt4mini  style=04  cost=$0.2529
+  [OK  ] [ 35/100]  35.0%  id=0035  gpt4o  style=05  cost=$0.2625
+  [OK  ] [ 36/100]  36.0%  id=0036  gpt4mini  style=06  cost=$0.2629
+  [OK  ] [ 37/100]  37.0%  id=0037  gpt4o  style=07  cost=$0.2717
+  [OK  ] [ 38/100]  38.0%  id=0038  gpt4mini  style=08  cost=$0.2721
+  [OK  ] [ 39/100]  39.0%  id=0039  gpt4o  style=09  cost=$0.2804
+  [OK  ] [ 40/100]  40.0%  id=0040  gpt4mini  style=10  cost=$0.2809
+  [OK  ] [ 41/100]  41.0%  id=0041  gpt4o  style=11  cost=$0.2898
+  [OK  ] [ 42/100]  42.0%  id=0042  gpt4mini  style=12  cost=$0.2902
+  [OK  ] [ 43/100]  43.0%  id=0043  gpt4o  style=13  cost=$0.2980
+  [OK  ] [ 44/100]  44.0%  id=0044  gpt4mini  style=14  cost=$0.2984
+  [OK  ] [ 45/100]  45.0%  id=0045  gpt4o  style=15  cost=$0.3070
+  [OK  ] [ 46/100]  46.0%  id=0046  gpt4mini  style=01  cost=$0.3075
+  [OK  ] [ 47/100]  47.0%  id=0047  gpt4o  style=02  cost=$0.3148
+  [OK  ] [ 48/100]  48.0%  id=0048  gpt4mini  style=03  cost=$0.3153
+  [OK  ] [ 49/100]  49.0%  id=0049  gpt4o  style=04  cost=$0.3247
+  [OK  ] [ 50/100]  50.0%  id=0050  gpt4mini  style=05  cost=$0.3252
+
+================================================
+PROGRESS: 50/100 (50.0%)
+Successful: 50 | Failed: 0
+Total cost so far: $0.3252
+Avg tokens per generation: 1136
+Estimated remaining cost: $0.33
+Estimated time remaining: 5 minutes
+================================================
+
+  [OK  ] [ 51/100]  51.0%  id=0051  gpt4o  style=06  cost=$0.3319
+  [OK  ] [ 52/100]  52.0%  id=0052  gpt4o  style=07  cost=$0.3395
+  [OK  ] [ 53/100]  53.0%  id=0053  gpt4o  style=08  cost=$0.3472
+  [OK  ] [ 54/100]  54.0%  id=0054  gpt4o  style=09  cost=$0.3555
+  [OK  ] [ 55/100]  55.0%  id=0055  gpt4o  style=10  cost=$0.3633
+  [OK  ] [ 56/100]  56.0%  id=0056  gpt4o  style=11  cost=$0.3732
+  [OK  ] [ 57/100]  57.0%  id=0057  gpt4o  style=12  cost=$0.3800
+  [OK  ] [ 58/100]  58.0%  id=0058  gpt4o  style=13  cost=$0.3900
+  [OK  ] [ 59/100]  59.0%  id=0059  gpt4o  style=14  cost=$0.3962
+  [OK  ] [ 60/100]  60.0%  id=0060  gpt4o  style=15  cost=$0.4036
+  [OK  ] [ 61/100]  61.0%  id=0061  gpt4o  style=01  cost=$0.4112
+  [OK  ] [ 62/100]  62.0%  id=0062  gpt4o  style=02  cost=$0.4173
+  [OK  ] [ 63/100]  63.0%  id=0063  gpt4o  style=03  cost=$0.4288
+  [OK  ] [ 64/100]  64.0%  id=0064  gpt4o  style=04  cost=$0.4371
+  [OK  ] [ 65/100]  65.0%  id=0065  gpt4o  style=05  cost=$0.4455
+  [OK  ] [ 66/100]  66.0%  id=0066  gpt4o  style=06  cost=$0.4520
+  [OK  ] [ 67/100]  67.0%  id=0067  gpt4o  style=07  cost=$0.4596
+  [OK  ] [ 68/100]  68.0%  id=0068  gpt4o  style=08  cost=$0.4674
+  [OK  ] [ 69/100]  69.0%  id=0069  gpt4o  style=09  cost=$0.4747
+  [OK  ] [ 70/100]  70.0%  id=0070  gpt4o  style=10  cost=$0.4829
+  [OK  ] [ 71/100]  71.0%  id=0071  gpt4o  style=11  cost=$0.4910
+  [OK  ] [ 72/100]  72.0%  id=0072  gpt4o  style=12  cost=$0.4988
+  [OK  ] [ 73/100]  73.0%  id=0073  gpt4o  style=13  cost=$0.5071
+  [OK  ] [ 74/100]  74.0%  id=0074  gpt4o  style=14  cost=$0.5151
+  [OK  ] [ 75/100]  75.0%  id=0075  gpt4o  style=15  cost=$0.5224
+  [OK  ] [ 76/100]  76.0%  id=0076  gpt4o  style=01  cost=$0.5310
+  [OK  ] [ 77/100]  77.0%  id=0077  gpt4o  style=02  cost=$0.5375
+  [OK  ] [ 78/100]  78.0%  id=0078  gpt4o  style=03  cost=$0.5468
+  [OK  ] [ 79/100]  79.0%  id=0079  gpt4o  style=04  cost=$0.5548
+  [OK  ] [ 80/100]  80.0%  id=0080  gpt4o  style=05  cost=$0.5625
+  [OK  ] [ 81/100]  81.0%  id=0081  gpt4o  style=06  cost=$0.5701
+  [OK  ] [ 82/100]  82.0%  id=0082  gpt4o  style=07  cost=$0.5780
+  [OK  ] [ 83/100]  83.0%  id=0083  gpt4o  style=08  cost=$0.5863
+  [OK  ] [ 84/100]  84.0%  id=0084  gpt4o  style=09  cost=$0.5939
+  [OK  ] [ 85/100]  85.0%  id=0085  gpt4o  style=10  cost=$0.6021
+  [OK  ] [ 86/100]  86.0%  id=0086  gpt4o  style=11  cost=$0.6114
+  [OK  ] [ 87/100]  87.0%  id=0087  gpt4o  style=12  cost=$0.6193
+  [OK  ] [ 88/100]  88.0%  id=0088  gpt4o  style=13  cost=$0.6273
+  [OK  ] [ 89/100]  89.0%  id=0089  gpt4o  style=14  cost=$0.6330
+  [OK  ] [ 90/100]  90.0%  id=0090  gpt4o  style=15  cost=$0.6416
+  [OK  ] [ 91/100]  91.0%  id=0091  gpt4o  style=01  cost=$0.6508
+  [OK  ] [ 92/100]  92.0%  id=0092  gpt4o  style=02  cost=$0.6577
+  [OK  ] [ 93/100]  93.0%  id=0093  gpt4o  style=03  cost=$0.6687
+  [OK  ] [ 94/100]  94.0%  id=0094  gpt4o  style=04  cost=$0.6777
+  [OK  ] [ 95/100]  95.0%  id=0095  gpt4o  style=05  cost=$0.6848
+  [OK  ] [ 96/100]  96.0%  id=0096  gpt4o  style=06  cost=$0.6917
+  [OK  ] [ 97/100]  97.0%  id=0097  gpt4o  style=07  cost=$0.7002
+  [OK  ] [ 98/100]  98.0%  id=0098  gpt4o  style=08  cost=$0.7096
+  [OK  ] [ 99/100]  99.0%  id=0099  gpt4o  style=09  cost=$0.7185
+  [OK  ] [100/100] 100.0%  id=0100  gpt4o  style=10  cost=$0.7273
+
+================================================
+PROGRESS: 100/100 (100.0%)
+Successful: 100 | Failed: 0
+Total cost so far: $0.7273
+Avg tokens per generation: 1116
+Estimated remaining cost: $0.00
+Estimated time remaining: 0 minutes
+================================================
+
+
+==================================================
+GENERATION COMPLETE
+  Successful : 100
+  Failed     : 0
+  Total cost : $0.7273
+==================================================
+
+Running post-generation validation …
+
+============================================================
+VALIDATION REPORT
+Generated : 2026-02-19T21:05:32Z
+============================================================
+
+1. FILE COUNT: 100 .py files across all model subfolders
+   gpt4o     : 70 files
+   gpt4mini  : 20 files
+   sonnet    : 10 files
+
+2. SIDECAR JSONs: 100 (should match file count)
+
+3. SYNTAX CHECK: 91 pass / 9 fail
+   gen_0036_gpt4mini_06.py:   File "data/raw/gpt4mini/gen_0036_gpt4mini_06.py", line 115
+    global current_player
+    ^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: name 'current_player' is used prior to global declaration
+
+   gen_0016_gpt4o_01.py:   File "data/raw/gpt4o/gen_0016_gpt4o_01.py", line 45
+    ```python
+    ^
+SyntaxError: invalid syntax
+
+   gen_0033_gpt4o_03.py:   File "data/raw/gpt4o/gen_0033_gpt4o_03.py", line 45
+    ```python
+    ^
+SyntaxError: invalid syntax
+
+   gen_0041_gpt4o_11.py:   File "data/raw/gpt4o/gen_0041_gpt4o_11.py", line 45
+    ```python
+    ^
+SyntaxError: invalid syntax
+
+   gen_0063_gpt4o_03.py:   File "data/raw/gpt4o/gen_0063_gpt4o_03.py", line 45
+    ```python
+    ^
+SyntaxError: invalid syntax
+
+   gen_0065_gpt4o_05.py:   File "data/raw/gpt4o/gen_0065_gpt4o_05.py", line 45
+    ```python
+    ^
+SyntaxError: invalid syntax
+
+   gen_0066_gpt4o_06.py:   File "data/raw/gpt4o/gen_0066_gpt4o_06.py", line 45
+    ```python
+    ^
+SyntaxError: invalid syntax
+
+   gen_0077_gpt4o_02.py:   File "data/raw/gpt4o/gen_0077_gpt4o_02.py", line 45
+    ```python
+    ^
+SyntaxError: invalid syntax
+
+   gen_0078_gpt4o_03.py:   File "data/raw/gpt4o/gen_0078_gpt4o_03.py", line 45
+    ```python
+    ^
+SyntaxError: invalid syntax
+
+
+4. DUPLICATES (code-only MD5): 0 duplicate(s) in 0 group(s)
+
+5. TOTAL COST: $0.7273
+
+6. DISTRIBUTION BY MODEL:
+   anthropic/claude-3.5-sonnet: 10
+   openai/gpt-4o: 70
+   openai/gpt-4o-mini: 20
+   DISTRIBUTION BY STYLE:
+   Style 01: 7
+   Style 02: 7
+   Style 03: 7
+   Style 04: 7
+   Style 05: 7
+   Style 06: 7
+   Style 07: 7
+   Style 08: 7
+   Style 09: 7
+   Style 10: 7
+   Style 11: 6
+   Style 12: 6
+   Style 13: 6
+   Style 14: 6
+   Style 15: 6
+
+============================================================
+
+Validation report saved → data/validation_report.txt
