@@ -21,6 +21,7 @@ data/
 import csv
 import hashlib
 import json
+import os
 import py_compile
 import signal
 import sys
@@ -29,10 +30,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 
-API_KEY = "REDACTED_API_KEY"   # ← paste your key here
+API_KEY = os.getenv("OPENROUTER_API_KEY", "")   # loaded from .env
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 HEADERS = {
     "Authorization": f"Bearer {API_KEY}",
