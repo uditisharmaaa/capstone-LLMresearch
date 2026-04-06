@@ -1,0 +1,56 @@
+============================================================
+AI-GENERATED CODE SIMILARITY ANALYSIS REPORT
+============================================================
+
+DATASET SUMMARY
+----------------------------------------
+Total samples: 100
+By model: {'gpt4o': 70, 'gpt4mini': 20, 'sonnet': 10}
+Average lines: 93.4
+Average characters: 2773.7
+
+SIMILARITY ANALYSIS
+----------------------------------------
+sonnet (within): 0.8833 (+/- 0.0561)
+gpt4mini (within): 0.8311 (+/- 0.0724)
+gpt4o (within): 0.7852 (+/- 0.1110)
+sonnet vs gpt4mini: 0.8216 (+/- 0.0539)
+sonnet vs gpt4o: 0.7930 (+/- 0.0765)
+gpt4mini vs gpt4o: 0.7903 (+/- 0.0882)
+
+HYPOTHESIS TESTS
+----------------------------------------
+
+within_vs_between:
+  Group 1 mean: 0.7902
+  Group 2 mean: 0.7939
+  Mean difference: -0.0037
+  Effect size (Cohen's d): -0.0381
+  Mann-Whitney p-value: 4.99e-02
+  Significance: significant (p < 0.05)
+
+sonnet_vs_gpt4mini:
+  Group 1 mean: 0.8833
+  Group 2 mean: 0.8311
+  Mean difference: 0.0522
+  Effect size (Cohen's d): 0.8058
+  Mann-Whitney p-value: 1.37e-05
+  Significance: highly significant (p < 0.001)
+
+sonnet_vs_gpt4o:
+  Group 1 mean: 0.8833
+  Group 2 mean: 0.7852
+  Mean difference: 0.0981
+  Effect size (Cohen's d): 1.1151
+  Mann-Whitney p-value: 7.32e-10
+  Significance: highly significant (p < 0.001)
+
+gpt4mini_vs_gpt4o:
+  Group 1 mean: 0.8311
+  Group 2 mean: 0.7852
+  Mean difference: 0.0459
+  Effect size (Cohen's d): 0.4901
+  Mann-Whitney p-value: 6.47e-06
+  Significance: highly significant (p < 0.001)
+
+============================================================

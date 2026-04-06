@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Detection - Complete Codebase Guide</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --code-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            overflow-x: auto;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            color: var(--text);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        h4 {
+            font-size: 1.15rem;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--secondary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .success {
+            background: #dcfce7;
+            border-left: 4px solid var(--success);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.85em;
+            color: #e11d48;
+        }
+
+        pre {
+            background: var(--code-bg);
+            color: #e2e8f0;
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        .code-comment { color: #6b7280; }
+        .code-keyword { color: #f472b6; }
+        .code-string { color: #a5f3fc; }
+        .code-function { color: #fbbf24; }
+        .code-number { color: #a78bfa; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #f1f5f9;
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .file-path {
+            font-family: 'Monaco', 'Menlo', monospace;
+            background: #e0e7ff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: var(--primary-dark);
+        }
+
+        .function-sig {
+            font-family: 'Monaco', 'Menlo', monospace;
+            background: #fef3c7;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #92400e;
+        }
+
+        .flow-diagram {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .flow-step {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .flow-arrow {
+            color: var(--secondary);
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .toc {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.3rem;
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .param-table td:first-child {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.85em;
+            color: #e11d48;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>AI Code Detection - Complete Codebase Guide</h1>
+    <p>Understanding every file, function, and data flow in detail</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#data-flow">Data Flow</a></li>
+        <li><a href="#pipeline">pipeline.py</a></li>
+        <li><a href="#preprocessing">preprocessing.py</a></li>
+        <li><a href="#lexical">lexical.py</a></li>
+        <li><a href="#structural">structural.py</a></li>
+        <li><a href="#semantic">semantic.py</a></li>
+        <li><a href="#analysis">analysis.py</a></li>
+        <li><a href="#visualization">visualization.py</a></li>
+        <li><a href="#run-analysis">run_analysis.py</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+<!-- ============================================================== -->
+<!-- OVERVIEW -->
+<!-- ============================================================== -->
+<section id="overview">
+    <h2>Project Overview</h2>
+
+    <div class="toc">
+        <h3>What This Guide Covers</h3>
+        <ul>
+            <li><strong>1. Data Flow</strong> - How data moves through the system step by step</li>
+            <li><strong>2. pipeline.py</strong> - Generating AI code samples via API calls</li>
+            <li><strong>3. preprocessing.py</strong> - Loading and cleaning the generated code</li>
+            <li><strong>4. lexical.py</strong> - Extracting text-based features (TF-IDF, keywords, patterns)</li>
+            <li><strong>5. structural.py</strong> - Extracting AST-based features (code structure)</li>
+            <li><strong>6. semantic.py</strong> - Extracting deep learning embeddings (CodeBERT)</li>
+            <li><strong>7. analysis.py</strong> - Computing similarities and running statistical tests</li>
+            <li><strong>8. visualization.py</strong> - Creating plots and reports</li>
+            <li><strong>9. run_analysis.py</strong> - The main script that ties everything together</li>
+        </ul>
+    </div>
+
+    <h3>The Big Picture</h3>
+    <p>Our goal is to detect whether code was written by AI. We do this by:</p>
+    <ol>
+        <li><strong>Generate AI code samples</strong> - Ask different AI models to solve the same assignment (Connect4)</li>
+        <li><strong>Extract features</strong> - Convert each code sample into numbers that describe it</li>
+        <li><strong>Compute similarities</strong> - Measure how similar each pair of code samples is</li>
+        <li><strong>Find patterns</strong> - Do AI models produce distinctive "fingerprints"?</li>
+        <li><strong>Build a detector</strong> - Use these patterns to classify new submissions</li>
+    </ol>
+
+    <div class="highlight">
+        <strong>Key Insight:</strong> Different AI models (GPT-4o, Claude, etc.) seem to produce code with different "styles" or "fingerprints". If we can measure these patterns, we can detect AI-generated code AND identify which model likely generated it.
+    </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- DATA FLOW -->
+<!-- ============================================================== -->
+<section id="data-flow">
+    <h2>Complete Data Flow</h2>
+
+    <p>Here's exactly how data transforms as it moves through the pipeline:</p>
+
+    <div class="flow-diagram">
+        <div class="flow-step">1. API Calls</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">2. Raw .py Files</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">3. DataFrame</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">4. Feature Vectors</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">5. Similarity Matrix</div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">6. Statistical Results</div>
+    </div>
+
+    <h3>Step 1: API Calls &rarr; Raw Python Files</h3>
+    <p><span class="file-path">pipeline.py</span> makes API calls to AI models and saves the responses.</p>
+
+    <div class="card">
+        <strong>Input:</strong> Prompt asking for Connect4 implementation + style instructions<br>
+        <strong>Output:</strong> 100 Python files in <code>data/raw/{model}/</code><br>
+        <strong>Example:</strong> <code>data/raw/gpt4o/gen_0001_gpt4o_01.py</code>
+    </div>
+
+    <h3>Step 2: Raw Files &rarr; Clean DataFrame</h3>
+    <p><span class="file-path">src/utils/preprocessing.py</span> loads all files into a pandas DataFrame.</p>
+
+    <div class="card">
+        <strong>Input:</strong> 100 Python files from disk<br>
+        <strong>Output:</strong> DataFrame with columns:
+        <ul>
+            <li><code>filepath</code> - where the file is</li>
+            <li><code>model</code> - which AI model (gpt4o, gpt4mini, sonnet)</li>
+            <li><code>code_clean</code> - the actual code (header stripped)</li>
+            <li><code>code_no_comments</code> - code without comments</li>
+            <li><code>is_valid</code> - True if code parses without syntax errors</li>
+        </ul>
+    </div>
+
+    <h3>Step 3: DataFrame &rarr; Feature Vectors</h3>
+    <p>Three extractors convert code into numbers:</p>
+
+    <div class="two-column">
+        <div class="card">
+            <h4>Lexical Features (553 numbers)</h4>
+            <p><span class="file-path">src/features/lexical.py</span></p>
+            <ul>
+                <li>TF-IDF scores (500 features)</li>
+                <li>Line/whitespace metrics (13 features)</li>
+                <li>Keyword frequencies (22 features)</li>
+                <li>Naming patterns (6 features)</li>
+                <li>Syntax patterns (12 features)</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>Structural Features (69 numbers)</h4>
+            <p><span class="file-path">src/features/structural.py</span></p>
+            <ul>
+                <li>AST depth and node counts</li>
+                <li>Function/class counts</li>
+                <li>Loop and condition counts</li>
+                <li>Cyclomatic complexity</li>
+                <li>Control flow pattern</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h4>Semantic Features (768 numbers)</h4>
+        <p><span class="file-path">src/features/semantic.py</span></p>
+        <ul>
+            <li>CodeBERT embeddings - a pre-trained neural network's understanding of the code</li>
+            <li>Captures "meaning" that lexical/structural features miss</li>
+        </ul>
+    </div>
+
+    <h3>Step 4: Feature Vectors &rarr; Similarity Matrix</h3>
+    <p><span class="file-path">src/similarity/analysis.py</span> computes how similar each pair of code samples is.</p>
+
+    <div class="card">
+        <strong>Input:</strong> 100 feature vectors (each with 500-768 numbers)<br>
+        <strong>Output:</strong> 100x100 similarity matrix<br>
+        <strong>Method:</strong> Cosine similarity - measures angle between vectors (1.0 = identical, 0.0 = completely different)
+    </div>
+
+    <pre><code><span class="code-comment"># Example similarity matrix (simplified)</span>
+           File1  File2  File3  ...
+File1      1.00   0.85   0.72   ...  <span class="code-comment"># File1 vs itself = 1.0</span>
+File2      0.85   1.00   0.91   ...  <span class="code-comment"># File1 vs File2 = 0.85</span>
+File3      0.72   0.91   1.00   ...
+...</code></pre>
+
+    <h3>Step 5: Similarity Matrix &rarr; Statistical Results</h3>
+    <p>We group similarities by model and run statistical tests.</p>
+
+    <div class="card">
+        <strong>Key Question:</strong> Is within-model similarity > between-model similarity?<br>
+        <strong>If yes:</strong> AI models have distinctive fingerprints!<br><br>
+        <strong>Statistical Tests Used:</strong>
+        <ul>
+            <li><strong>Mann-Whitney U test</strong> - Are two groups significantly different?</li>
+            <li><strong>Cohen's d</strong> - How big is the difference? (effect size)</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- PIPELINE.PY -->
+<!-- ============================================================== -->
+<section id="pipeline">
+    <h2>pipeline.py - Data Generation</h2>
+    <p class="file-path">Location: /capstone/pipeline.py</p>
+
+    <div class="highlight">
+        <strong>Purpose:</strong> Generate 100 AI-written Connect4 solutions by calling the OpenRouter API with different models and style instructions.
+    </div>
+
+    <h3>How It Works</h3>
+    <ol>
+        <li>Define a base prompt asking for a Connect4 game implementation</li>
+        <li>Add one of 15 different "style" instructions (e.g., "write concisely", "add comments")</li>
+        <li>Send to AI model (GPT-4o, GPT-4o-mini, or Claude Sonnet)</li>
+        <li>Save response as a .py file with provenance header</li>
+        <li>Repeat 100 times (70 GPT-4o, 20 GPT-4o-mini, 10 Claude)</li>
+    </ol>
+
+    <h3>Key Configuration</h3>
+    <pre><code><span class="code-comment"># Models and their counts</span>
+MODELS = [
+    {<span class="code-string">"name"</span>: <span class="code-string">"openai/gpt-4o"</span>,               <span class="code-string">"short"</span>: <span class="code-string">"gpt4o"</span>,    <span class="code-string">"count"</span>: <span class="code-number">70</span>},
+    {<span class="code-string">"name"</span>: <span class="code-string">"openai/gpt-4o-mini"</span>,          <span class="code-string">"short"</span>: <span class="code-string">"gpt4mini"</span>, <span class="code-string">"count"</span>: <span class="code-number">20</span>},
+    {<span class="code-string">"name"</span>: <span class="code-string">"anthropic/claude-3.5-sonnet"</span>, <span class="code-string">"short"</span>: <span class="code-string">"sonnet"</span>,   <span class="code-string">"count"</span>: <span class="code-number">10</span>},
+]
+
+<span class="code-comment"># 15 style variations - these make each request slightly different</span>
+STYLES = [
+    (<span class="code-number">1</span>, <span class="code-string">"Write in a simple, beginner-friendly style with clear variable names."</span>),
+    (<span class="code-number">2</span>, <span class="code-string">"Write in a compact style, minimizing lines of code."</span>),
+    (<span class="code-number">3</span>, <span class="code-string">"Write with detailed inline comments explaining every section."</span>),
+    <span class="code-comment"># ... 12 more styles</span>
+]</code></pre>
+
+    <h3>The Base Prompt</h3>
+    <p>Every request includes this prompt (shortened here):</p>
+    <pre><code><span class="code-string">"""
+You are a first-year computer science student completing a programming assignment.
+Write a complete Python3 implementation of the Connect 4 game with the following requirements:
+
+1. Create a 2D board with 7 columns and 6 rows, initialized with spaces
+2. Support exactly 2 players using checkers "X" and "O"
+3. Use constant global variables for board dimensions and number of players
+4. Randomly select which player goes first at the start
+5. Print the board with column labels A through G...
+...
+"""</span></code></pre>
+
+    <h3>Key Functions</h3>
+
+    <table>
+        <tr>
+            <th>Function</th>
+            <th>What It Does</th>
+        </tr>
+        <tr>
+            <td><span class="function-sig">build_plan()</span></td>
+            <td>Creates a list of 100 tasks, interleaving models round-robin style</td>
+        </tr>
+        <tr>
+            <td><span class="function-sig">call_api(model, prompt)</span></td>
+            <td>Makes HTTP POST request to OpenRouter API, returns JSON response</td>
+        </tr>
+        <tr>
+            <td><span class="function-sig">build_provenance_header(meta)</span></td>
+            <td>Creates the comment block at the top of each file with metadata</td>
+        </tr>
+        <tr>
+            <td><span class="function-sig">estimate_cost(model, tokens_in, tokens_out)</span></td>
+            <td>Calculates API cost based on token usage</td>
+        </tr>
+        <tr>
+            <td><span class="function-sig">load_completed_ids()</span></td>
+            <td>Reads CSV to find which generations already completed (for resume)</td>
+        </tr>
+        <tr>
+            <td><span class="function-sig">run_validation()</span></td>
+            <td>Checks all generated files for syntax errors, duplicates, etc.</td>
+        </tr>
+    </table>
+
+    <h3>Output Files</h3>
+    <pre><code>data/
+├── raw/
+│   ├── gpt4o/
+│   │   ├── gen_0001_gpt4o_01.py    <span class="code-comment"># Python code with provenance header</span>
+│   │   ├── gen_0001_gpt4o_01.json  <span class="code-comment"># Metadata sidecar (same info as header)</span>
+│   │   └── ... (70 files)
+│   ├── gpt4mini/
+│   │   └── ... (20 files)
+│   └── sonnet/
+│       └── ... (10 files)
+├── metadata.csv                     <span class="code-comment"># One row per generation with all metadata</span>
+├── generation_log.txt               <span class="code-comment"># Running log of each API call</span>
+└── validation_report.txt            <span class="code-comment"># Post-generation validation results</span></code></pre>
+
+    <h3>The Provenance Header</h3>
+    <p>Every generated file starts with a comment block like this:</p>
+    <pre><code><span class="code-comment"># ======================================================================
+# CAPSTONE RESEARCH PIPELINE — PROVENANCE RECORD
+# ======================================================================
+# generation_id  : 1
+# filename        : gen_0001_gpt4o_01.py
+# timestamp       : 2026-04-05T15:30:00Z
+# model           : openai/gpt-4o
+# model_short     : gpt4o
+# style_index     : 1
+# style_text      : Write in a simple, beginner-friendly style...
+# tokens_input    : 650
+# tokens_output   : 1800
+# ======================================================================</span>
+
+<span class="code-keyword">import</span> os
+<span class="code-keyword">import</span> random
+<span class="code-comment"># ... actual generated code starts here</span></code></pre>
+</section>
+
+<!-- ============================================================== -->
+<!-- PREPROCESSING.PY -->
+<!-- ============================================================== -->
+<section id="preprocessing">
+    <h2>preprocessing.py - Loading & Cleaning</h2>
+    <p class="file-path">Location: /capstone/src/utils/preprocessing.py</p>
+
+    <div class="highlight">
+        <strong>Purpose:</strong> Load all generated Python files into a pandas DataFrame, strip headers and comments, validate syntax.
+    </div>
+
+    <h3>The Main Function</h3>
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">load_all_generated_code</span>(data_dir=<span class="code-string">"data/raw"</span>) -> pd.DataFrame:
+    <span class="code-string">"""
+    Load all generated code files into a DataFrame.
+
+    Returns DataFrame with columns:
+        - filepath: path to the file
+        - filename: just the filename
+        - model: model used (gpt4o, gpt4mini, sonnet)
+        - style_index: style variation index
+        - code_raw: full code including header
+        - code_clean: code without header
+        - code_no_comments: code without comments
+        - is_valid: whether code parses
+        - line_count: number of lines
+        - char_count: number of characters
+    """</span></code></pre>
+
+    <h3>What Each Column Means</h3>
+    <table>
+        <tr>
+            <th>Column</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><code>filepath</code></td>
+            <td>str</td>
+            <td>Full path to the file</td>
+            <td><code>data/raw/gpt4o/gen_0001_gpt4o_01.py</code></td>
+        </tr>
+        <tr>
+            <td><code>filename</code></td>
+            <td>str</td>
+            <td>Just the filename</td>
+            <td><code>gen_0001_gpt4o_01.py</code></td>
+        </tr>
+        <tr>
+            <td><code>model</code></td>
+            <td>str</td>
+            <td>AI model that generated it</td>
+            <td><code>gpt4o</code></td>
+        </tr>
+        <tr>
+            <td><code>style_index</code></td>
+            <td>int</td>
+            <td>Which style prompt was used (1-15)</td>
+            <td><code>1</code></td>
+        </tr>
+        <tr>
+            <td><code>code_clean</code></td>
+            <td>str</td>
+            <td>Code with provenance header removed</td>
+            <td>(the actual Python code)</td>
+        </tr>
+        <tr>
+            <td><code>code_no_comments</code></td>
+            <td>str</td>
+            <td>Code with all comments removed</td>
+            <td>(code minus # comments)</td>
+        </tr>
+        <tr>
+            <td><code>is_valid</code></td>
+            <td>bool</td>
+            <td>True if code has valid Python syntax</td>
+            <td><code>True</code></td>
+        </tr>
+        <tr>
+            <td><code>line_count</code></td>
+            <td>int</td>
+            <td>Number of lines in clean code</td>
+            <td><code>93</code></td>
+        </tr>
+        <tr>
+            <td><code>char_count</code></td>
+            <td>int</td>
+            <td>Number of characters in clean code</td>
+            <td><code>2847</code></td>
+        </tr>
+    </table>
+
+    <h3>Helper Functions</h3>
+
+    <h4>strip_provenance_header(code)</h4>
+    <p>Removes the metadata comment block from the top of generated files.</p>
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">strip_provenance_header</span>(code: str) -> str:
+    <span class="code-string">"""Remove the provenance comment header from generated code."""</span>
+    lines = code.split(<span class="code-string">'\n'</span>)
+
+    <span class="code-comment"># Find the end of the provenance header</span>
+    <span class="code-comment"># Looking for the closing '# ===...' line</span>
+    header_end = <span class="code-number">0</span>
+    in_header = <span class="code-keyword">False</span>
+
+    <span class="code-keyword">for</span> i, line <span class="code-keyword">in</span> enumerate(lines):
+        <span class="code-keyword">if</span> line.startswith(<span class="code-string">'# ===='</span>) <span class="code-keyword">and</span> <span class="code-string">'PROVENANCE'</span> <span class="code-keyword">in</span> lines[i+<span class="code-number">1</span>]:
+            in_header = <span class="code-keyword">True</span>
+        <span class="code-keyword">if</span> in_header <span class="code-keyword">and</span> line.startswith(<span class="code-string">'# ===='</span>) <span class="code-keyword">and</span> i > <span class="code-number">5</span>:
+            header_end = i + <span class="code-number">1</span>
+            <span class="code-keyword">break</span>
+
+    <span class="code-keyword">return</span> <span class="code-string">'\n'</span>.join(lines[header_end:])</code></pre>
+
+    <h4>strip_comments(code)</h4>
+    <p>Removes all comments and docstrings from Python code.</p>
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">strip_comments</span>(code: str) -> str:
+    <span class="code-string">"""Remove all comments from Python code."""</span>
+    <span class="code-comment"># Remove single-line comments: # comment</span>
+    code = re.sub(r<span class="code-string">'#.*$'</span>, <span class="code-string">''</span>, code, flags=re.MULTILINE)
+
+    <span class="code-comment"># Remove docstrings: """...""" or '''...'''</span>
+    code = re.sub(r<span class="code-string">'"""[\s\S]*?"""'</span>, <span class="code-string">''</span>, code)
+    code = re.sub(r<span class="code-string">"'''[\s\S]*?'''"</span>, <span class="code-string">''</span>, code)
+
+    <span class="code-comment"># Remove empty lines</span>
+    lines = [line <span class="code-keyword">for</span> line <span class="code-keyword">in</span> code.split(<span class="code-string">'\n'</span>) <span class="code-keyword">if</span> line.strip()]
+    <span class="code-keyword">return</span> <span class="code-string">'\n'</span>.join(lines)</code></pre>
+
+    <h4>is_valid_python(code)</h4>
+    <p>Checks if code has valid Python syntax using the <code>ast</code> module.</p>
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">is_valid_python</span>(code: str) -> bool:
+    <span class="code-string">"""Check if code is syntactically valid Python."""</span>
+    <span class="code-keyword">try</span>:
+        ast.parse(code)  <span class="code-comment"># Try to parse as Python</span>
+        <span class="code-keyword">return</span> <span class="code-keyword">True</span>
+    <span class="code-keyword">except</span> SyntaxError:
+        <span class="code-keyword">return</span> <span class="code-keyword">False</span></code></pre>
+
+    <h3>Usage Example</h3>
+    <pre><code><span class="code-keyword">from</span> src.utils.preprocessing <span class="code-keyword">import</span> load_all_generated_code
+
+<span class="code-comment"># Load all 100 generated files</span>
+df = load_all_generated_code()
+
+print(f<span class="code-string">"Loaded {len(df)} files"</span>)  <span class="code-comment"># Output: Loaded 100 files</span>
+print(df[<span class="code-string">'model'</span>].value_counts())
+<span class="code-comment"># gpt4o      70</span>
+<span class="code-comment"># gpt4mini   20</span>
+<span class="code-comment"># sonnet     10</span>
+
+<span class="code-comment"># Access the clean code</span>
+first_code = df.iloc[<span class="code-number">0</span>][<span class="code-string">'code_clean'</span>]
+print(first_code[:200])  <span class="code-comment"># First 200 characters of the code</span></code></pre>
+</section>
+
+<!-- ============================================================== -->
+<!-- LEXICAL.PY -->
+<!-- ============================================================== -->
+<section id="lexical">
+    <h2>lexical.py - Text-Based Features</h2>
+    <p class="file-path">Location: /capstone/src/features/lexical.py</p>
+
+    <div class="highlight">
+        <strong>Purpose:</strong> Extract features based on the text/surface-level patterns in code. These are things you can measure by looking at the raw text without understanding what it does.
+    </div>
+
+    <h3>Why Lexical Features?</h3>
+    <p>Different programmers (and AI models) have different "writing styles":</p>
+    <ul>
+        <li>Some use long variable names, others use short ones</li>
+        <li>Some add lots of comments, others add none</li>
+        <li>Some prefer list comprehensions, others use for loops</li>
+        <li>Some use 2-space indentation, others use 4-space</li>
+    </ul>
+    <p>Lexical features capture these surface-level patterns.</p>
+
+    <h3>Feature Groups</h3>
+
+    <h4>1. Line Features (7 features)</h4>
+    <p>Extracted by <span class="function-sig">extract_line_features(code)</span></p>
+    <table class="param-table">
+        <tr><td>total_lines</td><td>Total number of lines in the code</td></tr>
+        <tr><td>non_empty_lines</td><td>Lines that aren't blank</td></tr>
+        <tr><td>empty_line_ratio</td><td>Fraction of lines that are blank (0.0 to 1.0)</td></tr>
+        <tr><td>avg_line_length</td><td>Average characters per line</td></tr>
+        <tr><td>std_line_length</td><td>How much line lengths vary (standard deviation)</td></tr>
+        <tr><td>max_line_length</td><td>Longest line in characters</td></tr>
+        <tr><td>min_non_empty_length</td><td>Shortest non-empty line</td></tr>
+    </table>
+
+    <h4>2. Whitespace Features (6 features)</h4>
+    <p>Extracted by <span class="function-sig">extract_whitespace_features(code)</span></p>
+    <table class="param-table">
+        <tr><td>avg_indent</td><td>Average indentation level (in spaces)</td></tr>
+        <tr><td>max_indent</td><td>Deepest indentation used</td></tr>
+        <tr><td>indent_levels</td><td>Number of different indentation levels used</td></tr>
+        <tr><td>uses_tabs</td><td>1 if code uses tabs, 0 otherwise</td></tr>
+        <tr><td>uses_spaces</td><td>1 if code uses spaces for indentation</td></tr>
+        <tr><td>trailing_whitespace_lines</td><td>Lines with trailing whitespace (sloppy!)</td></tr>
+    </table>
+
+    <h4>3. Keyword Features (22 features)</h4>
+    <p>Extracted by <span class="function-sig">extract_keyword_features(code)</span></p>
+    <pre><code><span class="code-comment"># Python keywords we track</span>
+PYTHON_KEYWORDS = {<span class="code-string">'if'</span>, <span class="code-string">'else'</span>, <span class="code-string">'elif'</span>, <span class="code-string">'for'</span>, <span class="code-string">'while'</span>, <span class="code-string">'def'</span>, <span class="code-string">'return'</span>, ...}
+PYTHON_BUILTINS = {<span class="code-string">'print'</span>, <span class="code-string">'len'</span>, <span class="code-string">'range'</span>, <span class="code-string">'int'</span>, <span class="code-string">'str'</span>, <span class="code-string">'list'</span>, ...}</code></pre>
+    <table class="param-table">
+        <tr><td>total_tokens</td><td>Total number of words/identifiers</td></tr>
+        <tr><td>unique_tokens</td><td>Number of unique words</td></tr>
+        <tr><td>keyword_count</td><td>Total Python keywords used</td></tr>
+        <tr><td>builtin_count</td><td>Total built-in functions used</td></tr>
+        <tr><td>keyword_ratio</td><td>Keywords / total tokens</td></tr>
+        <tr><td>kw_if, kw_for, kw_while, ...</td><td>Normalized count of each specific keyword</td></tr>
+    </table>
+
+    <h4>4. Syntax Pattern Features (12 features)</h4>
+    <p>Extracted by <span class="function-sig">extract_syntax_features(code)</span></p>
+    <table class="param-table">
+        <tr><td>function_defs</td><td>Number of <code>def function_name()</code> definitions</td></tr>
+        <tr><td>class_defs</td><td>Number of class definitions</td></tr>
+        <tr><td>list_comprehensions</td><td>Number of <code>[x for x in ...]</code> patterns</td></tr>
+        <tr><td>dict_comprehensions</td><td>Number of <code>{k: v for ...}</code> patterns</td></tr>
+        <tr><td>lambda_functions</td><td>Number of lambda expressions</td></tr>
+        <tr><td>ternary_operators</td><td>Number of <code>x if condition else y</code></td></tr>
+        <tr><td>f_strings</td><td>Number of f-strings like <code>f"Hello {name}"</code></td></tr>
+        <tr><td>docstrings</td><td>Number of triple-quoted docstrings</td></tr>
+        <tr><td>single_line_comments</td><td>Number of <code># comment</code> lines</td></tr>
+        <tr><td>assignments</td><td>Number of <code>=</code> assignments</td></tr>
+        <tr><td>comparisons</td><td>Number of <code>==, !=, <, ></code> etc.</td></tr>
+        <tr><td>arithmetic_ops</td><td>Number of <code>+, -, *, /</code> etc.</td></tr>
+    </table>
+
+    <h4>5. Naming Features (6 features)</h4>
+    <p>Extracted by <span class="function-sig">extract_naming_features(code)</span></p>
+    <table class="param-table">
+        <tr><td>avg_identifier_length</td><td>Average length of variable/function names</td></tr>
+        <tr><td>snake_case_ratio</td><td>Fraction using snake_case (e.g., <code>my_variable</code>)</td></tr>
+        <tr><td>camel_case_ratio</td><td>Fraction using camelCase (e.g., <code>myVariable</code>)</td></tr>
+        <tr><td>single_char_ratio</td><td>Fraction of single-letter names (e.g., <code>i</code>, <code>x</code>)</td></tr>
+        <tr><td>all_caps_ratio</td><td>Fraction of ALL_CAPS constants</td></tr>
+        <tr><td>unique_identifier_ratio</td><td>Unique names / total names</td></tr>
+    </table>
+
+    <h4>6. TF-IDF Features (500 features)</h4>
+    <p>Extracted by <span class="function-sig">compute_tfidf_features(codes, max_features=500)</span></p>
+
+    <div class="card">
+        <strong>What is TF-IDF?</strong>
+        <p><strong>TF</strong> (Term Frequency): How often a word appears in THIS document.</p>
+        <p><strong>IDF</strong> (Inverse Document Frequency): How rare is this word across ALL documents?</p>
+        <p><strong>TF-IDF = TF × IDF</strong>: High score means the word is frequent in this document but rare overall — it's distinctive!</p>
+    </div>
+
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">compute_tfidf_features</span>(codes: List[str], max_features: int = <span class="code-number">500</span>):
+    <span class="code-string">"""
+    Compute TF-IDF features for a list of code snippets.
+
+    We treat code like a document:
+    - Tokens are words (variable names, keywords, operators)
+    - Each code file is a "document"
+    - TF-IDF captures which tokens are distinctive for each file
+    """</span>
+
+    <span class="code-comment"># Custom tokenizer splits on whitespace AND operators</span>
+    <span class="code-keyword">def</span> <span class="code-function">code_tokenizer</span>(code):
+        tokens = re.findall(r<span class="code-string">'\b\w+\b|[+\-*/%=<>!&|^~]+|[(){}\[\],;:]'</span>, code)
+        <span class="code-keyword">return</span> tokens
+
+    vectorizer = TfidfVectorizer(
+        tokenizer=code_tokenizer,
+        max_features=max_features,  <span class="code-comment"># Only keep top 500 most important tokens</span>
+        ngram_range=(<span class="code-number">1</span>, <span class="code-number">2</span>),       <span class="code-comment"># Include single tokens AND pairs</span>
+        lowercase=<span class="code-keyword">False</span>,           <span class="code-comment"># Don't lowercase (case matters in code)</span>
+    )
+
+    tfidf_matrix = vectorizer.fit_transform(codes)
+    <span class="code-keyword">return</span> tfidf_matrix.toarray(), vectorizer</code></pre>
+
+    <h3>Putting It All Together</h3>
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">extract_lexical_features_batch</span>(df: pd.DataFrame) -> pd.DataFrame:
+    <span class="code-string">"""Extract lexical features for all code in a DataFrame."""</span>
+
+    feature_records = []
+    <span class="code-keyword">for</span> idx, row <span class="code-keyword">in</span> df.iterrows():
+        <span class="code-comment"># Extract all the hand-crafted features</span>
+        features = extract_all_lexical_features(row[<span class="code-string">'code_clean'</span>])
+        features[<span class="code-string">'filepath'</span>] = row[<span class="code-string">'filepath'</span>]
+        feature_records.append(features)
+
+    feature_df = pd.DataFrame(feature_records)
+
+    <span class="code-comment"># Also compute TF-IDF features</span>
+    tfidf_matrix, _ = compute_tfidf_features(df[<span class="code-string">'code_clean'</span>].tolist())
+    tfidf_df = pd.DataFrame(
+        tfidf_matrix,
+        columns=[f<span class="code-string">'tfidf_{i}'</span> <span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(tfidf_matrix.shape[<span class="code-number">1</span>])]
+    )
+
+    <span class="code-comment"># Combine hand-crafted + TF-IDF features</span>
+    result = pd.concat([feature_df, tfidf_df], axis=<span class="code-number">1</span>)
+    <span class="code-keyword">return</span> result  <span class="code-comment"># DataFrame with ~553 columns</span></code></pre>
+</section>
+
+<!-- ============================================================== -->
+<!-- STRUCTURAL.PY -->
+<!-- ============================================================== -->
+<section id="structural">
+    <h2>structural.py - AST-Based Features</h2>
+    <p class="file-path">Location: /capstone/src/features/structural.py</p>
+
+    <div class="highlight">
+        <strong>Purpose:</strong> Extract features based on the code's structure using the Abstract Syntax Tree (AST). These features capture HOW the code is organized, independent of variable names or formatting.
+    </div>
+
+    <h3>What is an AST?</h3>
+    <p>An Abstract Syntax Tree represents code as a tree structure:</p>
+
+    <pre><code><span class="code-comment"># This Python code:</span>
+<span class="code-keyword">def</span> <span class="code-function">add</span>(a, b):
+    <span class="code-keyword">return</span> a + b
+
+<span class="code-comment"># Becomes this tree:</span>
+Module
+└── FunctionDef (name='add')
+    ├── arguments
+    │   ├── arg (name='a')
+    │   └── arg (name='b')
+    └── Return
+        └── BinOp
+            ├── Name (id='a')
+            ├── Add
+            └── Name (id='b')</code></pre>
+
+    <div class="card">
+        <strong>Why AST Features?</strong>
+        <p>Two programs can look different but have the same structure:</p>
+        <pre><code><span class="code-comment"># Version 1</span>
+<span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(n):
+    total = total + i
+
+<span class="code-comment"># Version 2 (same structure, different names)</span>
+<span class="code-keyword">for</span> x <span class="code-keyword">in</span> range(count):
+    sum = sum + x</code></pre>
+        <p>Lexical features see these as different (different words). AST features see them as identical (same structure: For loop → AugAssign).</p>
+    </div>
+
+    <h3>The AST Feature Extractor</h3>
+    <pre><code><span class="code-keyword">class</span> <span class="code-function">ASTFeatureExtractor</span>(ast.NodeVisitor):
+    <span class="code-string">"""Visitor to extract features from AST."""</span>
+
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(self):
+        self.node_counts = Counter()   <span class="code-comment"># Count each node type</span>
+        self.max_depth = <span class="code-number">0</span>             <span class="code-comment"># Deepest nesting</span>
+        self.current_depth = <span class="code-number">0</span>         <span class="code-comment"># Current depth as we traverse</span>
+        self.function_count = <span class="code-number">0</span>
+        self.class_count = <span class="code-number">0</span>
+        self.loop_count = <span class="code-number">0</span>
+        self.condition_count = <span class="code-number">0</span>
+        <span class="code-comment"># ... more counters</span>
+
+    <span class="code-keyword">def</span> <span class="code-function">generic_visit</span>(self, node):
+        <span class="code-string">"""Called for every node in the tree."""</span>
+        self.current_depth += <span class="code-number">1</span>
+        self.max_depth = max(self.max_depth, self.current_depth)
+
+        node_type = type(node).__name__
+        self.node_counts[node_type] += <span class="code-number">1</span>
+
+        <span class="code-comment"># Track specific constructs</span>
+        <span class="code-keyword">if</span> node_type == <span class="code-string">'FunctionDef'</span>:
+            self.function_count += <span class="code-number">1</span>
+        <span class="code-keyword">elif</span> node_type <span class="code-keyword">in</span> (<span class="code-string">'For'</span>, <span class="code-string">'While'</span>):
+            self.loop_count += <span class="code-number">1</span>
+        <span class="code-keyword">elif</span> node_type == <span class="code-string">'If'</span>:
+            self.condition_count += <span class="code-number">1</span>
+        <span class="code-comment"># ... etc</span>
+
+        <span class="code-comment"># Visit all children</span>
+        <span class="code-keyword">for</span> child <span class="code-keyword">in</span> ast.iter_child_nodes(node):
+            self.visit(child)
+
+        self.current_depth -= <span class="code-number">1</span></code></pre>
+
+    <h3>Extracted Features</h3>
+
+    <h4>Basic AST Metrics (11 features)</h4>
+    <table class="param-table">
+        <tr><td>ast_max_depth</td><td>Deepest nesting level in the code</td></tr>
+        <tr><td>ast_total_nodes</td><td>Total nodes in the AST</td></tr>
+        <tr><td>ast_unique_node_types</td><td>How many different node types used</td></tr>
+        <tr><td>ast_function_count</td><td>Number of function definitions</td></tr>
+        <tr><td>ast_class_count</td><td>Number of class definitions</td></tr>
+        <tr><td>ast_loop_count</td><td>Number of for/while loops</td></tr>
+        <tr><td>ast_condition_count</td><td>Number of if statements</td></tr>
+        <tr><td>ast_try_count</td><td>Number of try/except blocks</td></tr>
+        <tr><td>ast_return_count</td><td>Number of return statements</td></tr>
+        <tr><td>ast_call_count</td><td>Number of function calls</td></tr>
+        <tr><td>ast_avg_nesting</td><td>Average nesting depth</td></tr>
+    </table>
+
+    <h4>Node Type Ratios (48+ features)</h4>
+    <p>For each AST node type, we compute what fraction of total nodes it represents:</p>
+    <pre><code><span class="code-comment"># Example: If code has 200 total nodes and 15 are "If" nodes</span>
+ast_if_ratio = <span class="code-number">15</span> / <span class="code-number">200</span> = <span class="code-number">0.075</span>  <span class="code-comment"># 7.5% of nodes are if statements</span></code></pre>
+
+    <h3>Cyclomatic Complexity</h3>
+    <p>Measures how complex the control flow is (how many paths through the code).</p>
+
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">compute_cyclomatic_complexity</span>(code: str) -> int:
+    <span class="code-string">"""
+    Cyclomatic Complexity = 1 + number of decision points
+
+    Decision points:
+    - if/elif statements
+    - for/while loops
+    - and/or in conditions
+    - except handlers
+    - comprehension conditions
+    """</span>
+    tree = ast.parse(code)
+    complexity = <span class="code-number">1</span>  <span class="code-comment"># Base complexity</span>
+
+    <span class="code-keyword">for</span> node <span class="code-keyword">in</span> ast.walk(tree):
+        <span class="code-keyword">if</span> isinstance(node, (ast.If, ast.While, ast.For)):
+            complexity += <span class="code-number">1</span>
+        <span class="code-keyword">elif</span> isinstance(node, ast.BoolOp):
+            <span class="code-comment"># "and" / "or" add paths</span>
+            complexity += len(node.values) - <span class="code-number">1</span>
+        <span class="code-keyword">elif</span> isinstance(node, ast.Try):
+            complexity += len(node.handlers)  <span class="code-comment"># Each except clause</span>
+
+    <span class="code-keyword">return</span> complexity</code></pre>
+
+    <div class="card">
+        <strong>Example Complexity Scores:</strong>
+        <ul>
+            <li>Simple function with no branches: <strong>1</strong></li>
+            <li>Function with one if/else: <strong>2</strong></li>
+            <li>Function with nested loops and conditions: <strong>5-10+</strong></li>
+            <li>Complex game logic: <strong>15-25+</strong></li>
+        </ul>
+    </div>
+
+    <h3>Control Flow Pattern</h3>
+    <p>Creates a compact string representing the control flow structure:</p>
+
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">get_control_flow_pattern</span>(code: str) -> str:
+    <span class="code-string">"""
+    Create a string like: "F[?R]F[?[?R]]F?R"
+
+    Symbols:
+    F = Function definition
+    [ ] = For loop (start/end)
+    ( ) = While loop (start/end)
+    ? = If condition
+    R = Return
+    T = Try block
+    """</span>
+    <span class="code-comment"># ... implementation walks AST and builds string</span></code></pre>
+
+    <div class="card">
+        <strong>Example:</strong> A Connect4 game might have pattern like:
+        <pre><code>F?RF[?R]F[?R]F[[?R]]F?[?[?]?[?]?[?]?[?]]RF(?[?R])R</code></pre>
+        <p>This encodes: main() has if-return, functions with for-loops, nested win-checking logic, and a while-loop game loop.</p>
+    </div>
+
+    <h3>Function Signatures</h3>
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">extract_function_signatures</span>(code: str) -> List[Dict]:
+    <span class="code-string">"""Extract info about each function defined in the code."""</span>
+    signatures = []
+
+    <span class="code-keyword">for</span> node <span class="code-keyword">in</span> ast.walk(tree):
+        <span class="code-keyword">if</span> isinstance(node, ast.FunctionDef):
+            sig = {
+                <span class="code-string">'name'</span>: node.name,
+                <span class="code-string">'num_args'</span>: len(node.args.args),
+                <span class="code-string">'has_defaults'</span>: len(node.args.defaults) > <span class="code-number">0</span>,
+                <span class="code-string">'has_vararg'</span>: node.args.vararg <span class="code-keyword">is not None</span>,
+                <span class="code-string">'body_size'</span>: len(node.body),
+            }
+            signatures.append(sig)
+
+    <span class="code-keyword">return</span> signatures</code></pre>
+
+    <p>This gives us aggregated features like:</p>
+    <table class="param-table">
+        <tr><td>num_functions</td><td>How many functions defined</td></tr>
+        <tr><td>avg_function_args</td><td>Average number of parameters</td></tr>
+        <tr><td>avg_function_body_size</td><td>Average statements per function</td></tr>
+    </table>
+</section>
+
+<!-- ============================================================== -->
+<!-- SEMANTIC.PY -->
+<!-- ============================================================== -->
+<section id="semantic">
+    <h2>semantic.py - Deep Learning Features</h2>
+    <p class="file-path">Location: /capstone/src/features/semantic.py</p>
+
+    <div class="highlight">
+        <strong>Purpose:</strong> Extract features using CodeBERT, a pre-trained neural network that "understands" code semantically. These features capture meaning that lexical and structural features miss.
+    </div>
+
+    <h3>What is CodeBERT?</h3>
+    <p>CodeBERT is a neural network trained on millions of code examples. It learned to understand:</p>
+    <ul>
+        <li>What code DOES, not just what it looks like</li>
+        <li>Relationships between functions, variables, and logic</li>
+        <li>Common patterns and idioms across programming languages</li>
+    </ul>
+
+    <div class="card">
+        <strong>Analogy:</strong> If lexical features are like counting words in an essay, and structural features are like diagramming sentences, then CodeBERT embeddings are like understanding what the essay MEANS.
+    </div>
+
+    <h3>How It Works</h3>
+
+    <pre><code><span class="code-keyword">class</span> <span class="code-function">CodeBERTEmbedder</span>:
+    <span class="code-string">"""Generate code embeddings using CodeBERT."""</span>
+
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(self, model_name=<span class="code-string">"microsoft/codebert-base"</span>):
+        <span class="code-comment"># Load the pre-trained model from HuggingFace</span>
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModel.from_pretrained(model_name)
+        self.model.eval()  <span class="code-comment"># Set to evaluation mode</span>
+
+    <span class="code-keyword">def</span> <span class="code-function">get_embedding</span>(self, code: str) -> np.ndarray:
+        <span class="code-string">"""
+        Get embedding for a single code snippet.
+        Returns a 768-dimensional vector.
+        """</span>
+        <span class="code-comment"># Step 1: Tokenize the code</span>
+        inputs = self.tokenizer(
+            code,
+            return_tensors=<span class="code-string">"pt"</span>,
+            truncation=<span class="code-keyword">True</span>,
+            max_length=<span class="code-number">512</span>,  <span class="code-comment"># Max tokens CodeBERT can handle</span>
+        )
+
+        <span class="code-comment"># Step 2: Pass through the neural network</span>
+        <span class="code-keyword">with</span> torch.no_grad():  <span class="code-comment"># Don't compute gradients (faster)</span>
+            outputs = self.model(**inputs)
+
+        <span class="code-comment"># Step 3: Average all token embeddings into one vector</span>
+        <span class="code-comment"># outputs.last_hidden_state shape: [1, seq_len, 768]</span>
+        embedding = outputs.last_hidden_state.mean(dim=<span class="code-number">1</span>)
+
+        <span class="code-keyword">return</span> embedding.numpy().flatten()  <span class="code-comment"># Shape: (768,)</span></code></pre>
+
+    <h3>The Output: 768-Dimensional Vectors</h3>
+    <p>Each code file becomes a single vector with 768 numbers:</p>
+
+    <pre><code><span class="code-comment"># For a Connect4 implementation, the embedding might look like:</span>
+[<span class="code-number">0.0234</span>, <span class="code-number">-0.1567</span>, <span class="code-number">0.0891</span>, <span class="code-number">-0.0023</span>, <span class="code-number">0.2341</span>, ... <span class="code-comment"># 768 total numbers</span>]</code></pre>
+
+    <div class="card">
+        <strong>What Do These Numbers Mean?</strong>
+        <p>Each dimension captures some aspect of the code's "meaning". We can't interpret individual dimensions, but:</p>
+        <ul>
+            <li>Similar code → similar vectors (close in 768-dimensional space)</li>
+            <li>Different code → different vectors (far apart)</li>
+        </ul>
+        <p>This is why we use cosine similarity to compare them!</p>
+    </div>
+
+    <h3>Batch Processing</h3>
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">get_embeddings_batch</span>(self, codes: List[str], batch_size=<span class="code-number">8</span>) -> np.ndarray:
+    <span class="code-string">"""
+    Get embeddings for multiple code snippets efficiently.
+
+    Returns array of shape (n_samples, 768).
+    """</span>
+    all_embeddings = []
+
+    <span class="code-comment"># Process in batches (8 at a time) for efficiency</span>
+    <span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(<span class="code-number">0</span>, len(codes), batch_size):
+        batch = codes[i:i + batch_size]
+
+        <span class="code-comment"># Tokenize the batch</span>
+        inputs = self.tokenizer(
+            batch,
+            return_tensors=<span class="code-string">"pt"</span>,
+            truncation=<span class="code-keyword">True</span>,
+            max_length=<span class="code-number">512</span>,
+            padding=<span class="code-keyword">True</span>,  <span class="code-comment"># Pad shorter sequences</span>
+        )
+
+        <span class="code-comment"># Get embeddings</span>
+        <span class="code-keyword">with</span> torch.no_grad():
+            outputs = self.model(**inputs)
+
+        <span class="code-comment"># Mean pooling</span>
+        embeddings = outputs.last_hidden_state.mean(dim=<span class="code-number">1</span>)
+        all_embeddings.append(embeddings.numpy())
+
+    <span class="code-keyword">return</span> np.vstack(all_embeddings)  <span class="code-comment"># Shape: (100, 768)</span></code></pre>
+
+    <h3>Dimension Reduction (for Visualization)</h3>
+    <p>768 dimensions is too many to visualize. We can reduce to 2D:</p>
+
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">reduce_embedding_dimensions</span>(embeddings, n_components=<span class="code-number">2</span>, method=<span class="code-string">'pca'</span>):
+    <span class="code-string">"""Reduce 768 dimensions to 2 for plotting."""</span>
+
+    <span class="code-keyword">if</span> method == <span class="code-string">'pca'</span>:
+        <span class="code-keyword">from</span> sklearn.decomposition <span class="code-keyword">import</span> PCA
+        reducer = PCA(n_components=n_components)
+    <span class="code-keyword">elif</span> method == <span class="code-string">'umap'</span>:
+        <span class="code-keyword">import</span> umap
+        reducer = umap.UMAP(n_components=n_components)
+
+    reduced = reducer.fit_transform(embeddings)
+    <span class="code-keyword">return</span> reduced  <span class="code-comment"># Shape: (100, 2) - can now plot on x-y axes!</span></code></pre>
+
+    <h3>Why CodeBERT Matters for This Project</h3>
+    <div class="success">
+        <strong>Key Finding:</strong> CodeBERT embeddings show the strongest separation between AI models:
+        <ul>
+            <li>Within-model similarity: <strong>0.965</strong> (very similar)</li>
+            <li>Between-model similarity: <strong>0.951</strong> (less similar)</li>
+            <li>Statistical significance: <strong>p < 0.001</strong></li>
+        </ul>
+        <p>This suggests AI models have distinctive "semantic fingerprints" that CodeBERT can detect!</p>
+    </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- ANALYSIS.PY -->
+<!-- ============================================================== -->
+<section id="analysis">
+    <h2>analysis.py - Similarity & Statistics</h2>
+    <p class="file-path">Location: /capstone/src/similarity/analysis.py</p>
+
+    <div class="highlight">
+        <strong>Purpose:</strong> Compute pairwise similarities between all code samples and run statistical tests to determine if different AI models produce distinguishable code.
+    </div>
+
+    <h3>Computing Similarity</h3>
+
+    <h4>Cosine Similarity</h4>
+    <p>The main metric we use. Measures the angle between two vectors:</p>
+
+    <pre><code><span class="code-keyword">from</span> sklearn.metrics.pairwise <span class="code-keyword">import</span> cosine_similarity
+
+<span class="code-keyword">def</span> <span class="code-function">compute_pairwise_similarity</span>(features: np.ndarray, metric=<span class="code-string">'cosine'</span>):
+    <span class="code-string">"""
+    Compute pairwise similarity matrix.
+
+    Args:
+        features: (n_samples, n_features) array
+        metric: 'cosine' or 'euclidean'
+
+    Returns:
+        (n_samples, n_samples) similarity matrix
+    """</span>
+    <span class="code-keyword">if</span> metric == <span class="code-string">'cosine'</span>:
+        <span class="code-keyword">return</span> cosine_similarity(features)
+    <span class="code-keyword">elif</span> metric == <span class="code-string">'euclidean'</span>:
+        distances = euclidean_distances(features)
+        <span class="code-keyword">return</span> <span class="code-number">1</span> / (<span class="code-number">1</span> + distances)  <span class="code-comment"># Convert distance to similarity</span></code></pre>
+
+    <div class="card">
+        <strong>Cosine Similarity Intuition:</strong>
+        <ul>
+            <li><strong>1.0</strong> = Vectors point in exactly the same direction (identical patterns)</li>
+            <li><strong>0.5</strong> = Vectors are somewhat similar</li>
+            <li><strong>0.0</strong> = Vectors are perpendicular (no similarity)</li>
+            <li><strong>-1.0</strong> = Vectors point opposite directions (opposite patterns)</li>
+        </ul>
+        <p>For code, we typically see values between 0.6 and 1.0.</p>
+    </div>
+
+    <h4>Edit Distance (Levenshtein)</h4>
+    <p>Used to replicate Hoq & Leinonen's methodology. Counts minimum character edits to transform one string into another:</p>
+
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">compute_edit_distance_matrix</span>(codes: List[str]) -> np.ndarray:
+    <span class="code-string">"""
+    Compute pairwise Levenshtein edit distances.
+
+    Example:
+        "hello" → "hallo" = 1 (replace 'e' with 'a')
+        "cat" → "cats" = 1 (insert 's')
+    """</span>
+    <span class="code-keyword">from</span> Levenshtein <span class="code-keyword">import</span> distance
+
+    n = len(codes)
+    matrix = np.zeros((n, n))
+
+    <span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(n):
+        <span class="code-keyword">for</span> j <span class="code-keyword">in</span> range(i + <span class="code-number">1</span>, n):
+            dist = distance(codes[i], codes[j])
+            matrix[i, j] = dist
+            matrix[j, i] = dist  <span class="code-comment"># Symmetric</span>
+
+    <span class="code-keyword">return</span> matrix</code></pre>
+
+    <h3>Grouping Similarities</h3>
+
+    <h4>Within-Group Similarities</h4>
+    <p>Similarities between samples from the SAME model:</p>
+
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">get_within_group_similarities</span>(similarity_matrix, groups):
+    <span class="code-string">"""
+    Extract within-group similarities.
+
+    Example: For GPT-4o (70 samples), there are 70*69/2 = 2,415 pairs
+    """</span>
+    unique_groups = list(set(groups))
+    group_indices = {g: [i <span class="code-keyword">for</span> i, x <span class="code-keyword">in</span> enumerate(groups) <span class="code-keyword">if</span> x == g]
+                     <span class="code-keyword">for</span> g <span class="code-keyword">in</span> unique_groups}
+
+    within_group_sims = {}
+
+    <span class="code-keyword">for</span> group, indices <span class="code-keyword">in</span> group_indices.items():
+        sims = []
+        <span class="code-keyword">for</span> i, idx1 <span class="code-keyword">in</span> enumerate(indices):
+            <span class="code-keyword">for</span> idx2 <span class="code-keyword">in</span> indices[i + <span class="code-number">1</span>:]:  <span class="code-comment"># Only upper triangle</span>
+                sims.append(similarity_matrix[idx1, idx2])
+        within_group_sims[group] = sims
+
+    <span class="code-keyword">return</span> within_group_sims
+
+<span class="code-comment"># Result example:</span>
+<span class="code-comment"># {'gpt4o': [0.85, 0.82, 0.91, ...],     # 2,415 similarities</span>
+<span class="code-comment">#  'gpt4mini': [0.88, 0.84, 0.90, ...],  # 190 similarities</span>
+<span class="code-comment">#  'sonnet': [0.92, 0.89, 0.95, ...]}    # 45 similarities</span></code></pre>
+
+    <h4>Between-Group Similarities</h4>
+    <p>Similarities between samples from DIFFERENT models:</p>
+
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">get_between_group_similarities</span>(similarity_matrix, groups, group1, group2):
+    <span class="code-string">"""
+    Extract similarities between two specific groups.
+
+    Example: GPT-4o vs Claude = 70 * 10 = 700 pairs
+    """</span>
+    indices1 = [i <span class="code-keyword">for</span> i, g <span class="code-keyword">in</span> enumerate(groups) <span class="code-keyword">if</span> g == group1]
+    indices2 = [i <span class="code-keyword">for</span> i, g <span class="code-keyword">in</span> enumerate(groups) <span class="code-keyword">if</span> g == group2]
+
+    sims = []
+    <span class="code-keyword">for</span> i <span class="code-keyword">in</span> indices1:
+        <span class="code-keyword">for</span> j <span class="code-keyword">in</span> indices2:
+            sims.append(similarity_matrix[i, j])
+
+    <span class="code-keyword">return</span> sims</code></pre>
+
+    <h3>Statistical Tests</h3>
+
+    <h4>Mann-Whitney U Test</h4>
+    <p>Tests whether two groups are significantly different (non-parametric):</p>
+
+    <pre><code><span class="code-keyword">from</span> scipy <span class="code-keyword">import</span> stats
+
+<span class="code-keyword">def</span> <span class="code-function">statistical_comparison</span>(group1_sims, group2_sims):
+    <span class="code-string">"""Compare two groups of similarities."""</span>
+
+    <span class="code-comment"># Mann-Whitney U test (non-parametric)</span>
+    u_stat, u_pvalue = stats.mannwhitneyu(
+        group1_sims, group2_sims,
+        alternative=<span class="code-string">'two-sided'</span>
+    )
+
+    <span class="code-comment"># Effect size (Cohen's d)</span>
+    mean1, mean2 = np.mean(group1_sims), np.mean(group2_sims)
+    std_pooled = np.sqrt((np.var(group1_sims) + np.var(group2_sims)) / <span class="code-number">2</span>)
+    cohens_d = (mean1 - mean2) / std_pooled
+
+    <span class="code-keyword">return</span> {
+        <span class="code-string">'group1_mean'</span>: mean1,
+        <span class="code-string">'group2_mean'</span>: mean2,
+        <span class="code-string">'mean_difference'</span>: mean1 - mean2,
+        <span class="code-string">'cohens_d'</span>: cohens_d,
+        <span class="code-string">'mannwhitney_p'</span>: u_pvalue,
+    }</code></pre>
+
+    <div class="card">
+        <strong>Interpreting Results:</strong>
+        <ul>
+            <li><strong>p-value < 0.05:</strong> Significant difference (unlikely due to chance)</li>
+            <li><strong>p-value < 0.001:</strong> Highly significant</li>
+            <li><strong>Cohen's d ~ 0.2:</strong> Small effect</li>
+            <li><strong>Cohen's d ~ 0.5:</strong> Medium effect</li>
+            <li><strong>Cohen's d ~ 0.8:</strong> Large effect</li>
+        </ul>
+    </div>
+
+    <h3>Main Hypothesis Test</h3>
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">run_hypothesis_tests</span>(similarity_matrix, models):
+    <span class="code-string">"""
+    Test H1: Within-model similarity > Between-model similarity
+
+    If true, AI models have distinctive fingerprints!
+    """</span>
+    within_group = get_within_group_similarities(similarity_matrix, models)
+
+    <span class="code-comment"># Aggregate ALL within-group similarities</span>
+    all_within = []
+    <span class="code-keyword">for</span> sims <span class="code-keyword">in</span> within_group.values():
+        all_within.extend(sims)
+
+    <span class="code-comment"># Aggregate ALL between-group similarities</span>
+    all_between = []
+    unique_models = list(set(models))
+    <span class="code-keyword">for</span> i, model1 <span class="code-keyword">in</span> enumerate(unique_models):
+        <span class="code-keyword">for</span> model2 <span class="code-keyword">in</span> unique_models[i + <span class="code-number">1</span>:]:
+            all_between.extend(
+                get_between_group_similarities(similarity_matrix, models, model1, model2)
+            )
+
+    <span class="code-comment"># Compare!</span>
+    results = {}
+    results[<span class="code-string">'within_vs_between'</span>] = statistical_comparison(all_within, all_between)
+
+    <span class="code-keyword">return</span> results</code></pre>
+
+    <h3>Summary Statistics</h3>
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">analyze_model_similarities</span>(similarity_matrix, models):
+    <span class="code-string">"""Create a summary table of similarity analysis."""</span>
+
+    results = []
+
+    <span class="code-comment"># Within-group stats for each model</span>
+    <span class="code-keyword">for</span> model <span class="code-keyword">in</span> unique_models:
+        sims = within_group[model]
+        results.append({
+            <span class="code-string">'comparison'</span>: f<span class="code-string">'{model} (within)'</span>,
+            <span class="code-string">'type'</span>: <span class="code-string">'within'</span>,
+            <span class="code-string">'mean_similarity'</span>: np.mean(sims),
+            <span class="code-string">'std_similarity'</span>: np.std(sims),
+            <span class="code-string">'n_pairs'</span>: len(sims),
+        })
+
+    <span class="code-comment"># Between-group stats for each pair</span>
+    <span class="code-keyword">for</span> model1, model2 <span class="code-keyword">in</span> pairs:
+        sims = get_between_group_similarities(...)
+        results.append({
+            <span class="code-string">'comparison'</span>: f<span class="code-string">'{model1} vs {model2}'</span>,
+            <span class="code-string">'type'</span>: <span class="code-string">'between'</span>,
+            <span class="code-string">'mean_similarity'</span>: np.mean(sims),
+            <span class="code-string">'std_similarity'</span>: np.std(sims),
+            <span class="code-string">'n_pairs'</span>: len(sims),
+        })
+
+    <span class="code-keyword">return</span> pd.DataFrame(results)</code></pre>
+
+    <div class="success">
+        <strong>Our Results (TF-IDF):</strong>
+        <table>
+            <tr><th>Comparison</th><th>Mean Similarity</th><th>Pairs</th></tr>
+            <tr><td>Claude (within)</td><td>0.883</td><td>45</td></tr>
+            <tr><td>GPT-4o-mini (within)</td><td>0.831</td><td>190</td></tr>
+            <tr><td>GPT-4o (within)</td><td>0.785</td><td>2,415</td></tr>
+            <tr><td>All between-model</td><td>0.756</td><td>2,100</td></tr>
+        </table>
+        <p>Within-model is HIGHER than between-model — AI models DO have fingerprints!</p>
+    </div>
+</section>
+
+<!-- ============================================================== -->
+<!-- VISUALIZATION.PY -->
+<!-- ============================================================== -->
+<section id="visualization">
+    <h2>visualization.py - Creating Plots</h2>
+    <p class="file-path">Location: /capstone/src/similarity/visualization.py</p>
+
+    <div class="highlight">
+        <strong>Purpose:</strong> Create visualizations to communicate findings. Plots saved to <code>results/figures/</code>.
+    </div>
+
+    <h3>Available Plots</h3>
+
+    <h4>1. Similarity Heatmap</h4>
+    <p><span class="function-sig">plot_similarity_heatmap(similarity_matrix, labels, title, save_path)</span></p>
+    <p>Shows the full 100x100 similarity matrix as a colored grid. Darker = more similar.</p>
+
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">plot_similarity_heatmap</span>(similarity_matrix, labels, title, save_path=<span class="code-keyword">None</span>):
+    <span class="code-comment"># Sort by labels so same-model samples are adjacent</span>
+    sorted_indices = np.argsort(labels)
+    sorted_matrix = similarity_matrix[sorted_indices][:, sorted_indices]
+
+    <span class="code-comment"># Create heatmap with seaborn</span>
+    sns.heatmap(
+        sorted_matrix,
+        cmap=<span class="code-string">'RdYlBu_r'</span>,  <span class="code-comment"># Red-Yellow-Blue colormap</span>
+        vmin=<span class="code-number">0</span>, vmax=<span class="code-number">1</span>,
+        square=<span class="code-keyword">True</span>,
+    )</code></pre>
+
+    <div class="card">
+        <strong>How to Read It:</strong> You should see darker blocks along the diagonal where same-model samples cluster together.
+    </div>
+
+    <h4>2. Similarity Distribution</h4>
+    <p><span class="function-sig">plot_similarity_distribution(within_sims, between_sims, title, save_path)</span></p>
+    <p>Shows histograms comparing within-model vs between-model similarities.</p>
+
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">plot_similarity_distribution</span>(within_sims, between_sims, title, save_path=<span class="code-keyword">None</span>):
+    fig, axes = plt.subplots(<span class="code-number">1</span>, <span class="code-number">2</span>)
+
+    <span class="code-comment"># Left plot: Within-group for each model</span>
+    <span class="code-keyword">for</span> group, sims <span class="code-keyword">in</span> within_sims.items():
+        axes[<span class="code-number">0</span>].hist(sims, bins=<span class="code-number">30</span>, alpha=<span class="code-number">0.5</span>, label=group)
+
+    <span class="code-comment"># Right plot: Within vs Between overall</span>
+    axes[<span class="code-number">1</span>].hist(all_within, label=<span class="code-string">'Within-model'</span>)
+    axes[<span class="code-number">1</span>].hist(all_between, label=<span class="code-string">'Between-model'</span>)</code></pre>
+
+    <h4>3. Model Comparison Bar Plot</h4>
+    <p><span class="function-sig">plot_model_comparison_boxplot(analysis_df, title, save_path)</span></p>
+    <p>Bar chart comparing mean similarities with error bars.</p>
+
+    <h4>4. 2D Embedding Scatter Plot</h4>
+    <p><span class="function-sig">plot_2d_embedding(embeddings_2d, labels, title, save_path)</span></p>
+    <p>Shows CodeBERT embeddings reduced to 2D, colored by model. Points cluster by model!</p>
+
+    <h4>5. Edit Distance Comparison</h4>
+    <p><span class="function-sig">plot_edit_distance_comparison(distances_by_group, hoq_baseline, title, save_path)</span></p>
+    <p>Compares our edit distances to Hoq & Leinonen's baseline.</p>
+
+    <h3>Text Report Generation</h3>
+    <pre><code><span class="code-keyword">def</span> <span class="code-function">create_summary_report</span>(stats, analysis_df, test_results, save_path=<span class="code-keyword">None</span>):
+    <span class="code-string">"""Create a text summary report of the analysis."""</span>
+
+    lines = []
+    lines.append(<span class="code-string">"="</span> * <span class="code-number">60</span>)
+    lines.append(<span class="code-string">"AI-GENERATED CODE SIMILARITY ANALYSIS REPORT"</span>)
+    lines.append(<span class="code-string">"="</span> * <span class="code-number">60</span>)
+
+    <span class="code-comment"># Dataset summary</span>
+    lines.append(f<span class="code-string">"Total samples: {stats['total_samples']}"</span>)
+    lines.append(f<span class="code-string">"By model: {stats['by_model']}"</span>)
+
+    <span class="code-comment"># Similarity results</span>
+    <span class="code-keyword">for</span> _, row <span class="code-keyword">in</span> analysis_df.iterrows():
+        lines.append(f<span class="code-string">"{row['comparison']}: {row['mean_similarity']:.4f}"</span>)
+
+    <span class="code-comment"># Hypothesis test results</span>
+    <span class="code-keyword">for</span> test_name, result <span class="code-keyword">in</span> test_results.items():
+        lines.append(f<span class="code-string">"p-value: {result['mannwhitney_p']:.2e}"</span>)
+        lines.append(f<span class="code-string">"Cohen's d: {result['cohens_d']:.4f}"</span>)
+
+    report = <span class="code-string">"\n"</span>.join(lines)
+
+    <span class="code-keyword">if</span> save_path:
+        <span class="code-keyword">with</span> open(save_path, <span class="code-string">'w'</span>) <span class="code-keyword">as</span> f:
+            f.write(report)
+
+    <span class="code-keyword">return</span> report</code></pre>
+</section>
+
+<!-- ============================================================== -->
+<!-- RUN_ANALYSIS.PY -->
+<!-- ============================================================== -->
+<section id="run-analysis">
+    <h2>run_analysis.py - Main Script</h2>
+    <p class="file-path">Location: /capstone/run_analysis.py</p>
+
+    <div class="highlight">
+        <strong>Purpose:</strong> The main entry point that ties everything together. Run this to execute the full analysis pipeline.
+    </div>
+
+    <h3>Usage</h3>
+    <pre><code><span class="code-comment"># Full analysis with CodeBERT (slower, more complete)</span>
+python run_analysis.py
+
+<span class="code-comment"># Fast analysis without CodeBERT (TF-IDF only)</span>
+python run_analysis.py --skip-embeddings</code></pre>
+
+    <h3>The 6 Steps</h3>
+    <p>The script executes these steps in order:</p>
+
+    <div class="card">
+        <h4>Step 1: Load Data</h4>
+        <pre><code>df = load_all_generated_code()
+<span class="code-comment"># Result: DataFrame with 100 rows, one per code file</span></code></pre>
+    </div>
+
+    <div class="card">
+        <h4>Step 2: Extract Lexical Features</h4>
+        <pre><code>lexical_df = extract_lexical_features_batch(df)
+tfidf_matrix, _ = compute_tfidf_features(df[<span class="code-string">'code_clean'</span>].tolist())
+<span class="code-comment"># Result: 553 lexical features per file</span></code></pre>
+    </div>
+
+    <div class="card">
+        <h4>Step 3: Extract Structural Features</h4>
+        <pre><code>structural_df = extract_structural_features_batch(df)
+<span class="code-comment"># Result: 69 structural (AST) features per file</span></code></pre>
+    </div>
+
+    <div class="card">
+        <h4>Step 4: Compute Similarities</h4>
+        <pre><code><span class="code-comment"># TF-IDF similarity</span>
+tfidf_sim = compute_pairwise_similarity(tfidf_matrix, metric=<span class="code-string">'cosine'</span>)
+
+<span class="code-comment"># Edit distance (Hoq methodology)</span>
+edit_distances = compute_edit_distance_matrix(df[<span class="code-string">'code_no_comments'</span>].tolist())
+
+<span class="code-comment"># CodeBERT similarity (optional)</span>
+<span class="code-keyword">if not</span> skip_embeddings:
+    embeddings = extract_codebert_embeddings(df[<span class="code-string">'code_clean'</span>].tolist())
+    embedding_sim = compute_pairwise_similarity(embeddings)</code></pre>
+    </div>
+
+    <div class="card">
+        <h4>Step 5: Statistical Analysis</h4>
+        <pre><code>models = df[<span class="code-string">'model'</span>].tolist()
+
+<span class="code-comment"># Analyze similarities by model</span>
+tfidf_analysis = analyze_model_similarities(tfidf_sim, models)
+
+<span class="code-comment"># Run hypothesis tests</span>
+tfidf_tests = run_hypothesis_tests(tfidf_sim, models)
+
+<span class="code-comment"># Key result: Is within > between?</span>
+result = tfidf_tests[<span class="code-string">'within_vs_between'</span>]
+print(f<span class="code-string">"Within-model mean: {result['group1_mean']:.4f}"</span>)
+print(f<span class="code-string">"Between-model mean: {result['group2_mean']:.4f}"</span>)
+print(f<span class="code-string">"p-value: {result['mannwhitney_p']:.2e}"</span>)</code></pre>
+    </div>
+
+    <div class="card">
+        <h4>Step 6: Generate Visualizations</h4>
+        <pre><code><span class="code-comment"># Create all plots</span>
+plot_similarity_heatmap(tfidf_sim, models, save_path=<span class="code-string">"results/figures/heatmap.png"</span>)
+plot_similarity_distribution(within_sims, between_sims, save_path=<span class="code-string">"..."</span>)
+plot_model_comparison_boxplot(analysis_df, save_path=<span class="code-string">"..."</span>)
+plot_2d_embedding(embeddings_2d, models, save_path=<span class="code-string">"..."</span>)
+
+<span class="code-comment"># Save feature DataFrames</span>
+lexical_df.to_parquet(<span class="code-string">"results/lexical_features.parquet"</span>)
+structural_df.to_parquet(<span class="code-string">"results/structural_features.parquet"</span>)
+np.save(<span class="code-string">"results/codebert_embeddings.npy"</span>, embeddings)
+
+<span class="code-comment"># Generate text report</span>
+create_summary_report(stats, analysis_df, tests, save_path=<span class="code-string">"results/analysis_report.txt"</span>)</code></pre>
+    </div>
+
+    <h3>Output Files</h3>
+    <pre><code>results/
+├── figures/
+│   ├── similarity_heatmap_tfidf.png     <span class="code-comment"># 100x100 similarity matrix</span>
+│   ├── similarity_heatmap_codebert.png  <span class="code-comment"># Same, using CodeBERT</span>
+│   ├── similarity_distribution_tfidf.png <span class="code-comment"># Histograms</span>
+│   ├── model_comparison_tfidf.png       <span class="code-comment"># Bar chart</span>
+│   ├── embedding_clusters_codebert.png  <span class="code-comment"># 2D scatter plot</span>
+│   └── edit_distance_comparison.png     <span class="code-comment"># Comparison with Hoq</span>
+├── lexical_features.parquet             <span class="code-comment"># Saved features (binary)</span>
+├── structural_features.parquet
+├── codebert_embeddings.npy              <span class="code-comment"># 100x768 array</span>
+└── analysis_report.txt                  <span class="code-comment"># Text summary</span></code></pre>
+
+    <h3>Key Findings Output</h3>
+    <p>At the end of the script, you'll see something like:</p>
+    <pre><code>============================================================
+ANALYSIS COMPLETE
+============================================================
+
+Key Findings:
+  - Within-model similarity IS higher than between-model similarity
+    (difference = 0.0291, p = 4.32e-15)
+  - This supports H1: AI models produce distinct fingerprints
+
+Generated Figures:
+  - similarity_heatmap_tfidf.png
+  - similarity_distribution_tfidf.png
+  - model_comparison_tfidf.png
+  - embedding_clusters_codebert.png
+  - edit_distance_comparison.png</code></pre>
+</section>
+
+<!-- ============================================================== -->
+<!-- SUMMARY -->
+<!-- ============================================================== -->
+<section id="summary">
+    <h2>Putting It All Together</h2>
+
+    <h3>The Complete Pipeline</h3>
+    <pre><code><span class="code-comment"># Step 1: Generate data (already done)</span>
+python pipeline.py
+<span class="code-comment"># → Creates 100 .py files in data/raw/</span>
+
+<span class="code-comment"># Step 2: Run analysis</span>
+python run_analysis.py
+<span class="code-comment"># → Loads files with preprocessing.py</span>
+<span class="code-comment"># → Extracts features with lexical.py, structural.py, semantic.py</span>
+<span class="code-comment"># → Computes similarities with analysis.py</span>
+<span class="code-comment"># → Creates plots with visualization.py</span>
+<span class="code-comment"># → Saves everything to results/</span></code></pre>
+
+    <h3>What We Learned</h3>
+    <div class="success">
+        <ol>
+            <li><strong>Different AI models produce distinguishably different code</strong>
+                <ul>
+                    <li>Within-model similarity > between-model similarity (statistically significant)</li>
+                    <li>Claude produces the most consistent code (0.883 within-model similarity)</li>
+                    <li>GPT-4o produces the most varied code (0.785 within-model similarity)</li>
+                </ul>
+            </li>
+            <li><strong>Multiple feature types capture different signals</strong>
+                <ul>
+                    <li>TF-IDF: Surface-level word patterns</li>
+                    <li>AST: Code structure patterns</li>
+                    <li>CodeBERT: Deep semantic patterns</li>
+                </ul>
+            </li>
+            <li><strong>This forms the basis for a detection system</strong>
+                <ul>
+                    <li>When human data arrives, compare new submissions to both human and AI baselines</li>
+                    <li>If closer to AI baseline → flag for review</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <h3>Next Steps</h3>
+    <div class="warning">
+        <strong>Waiting for:</strong> Pre-ChatGPT student submissions from professor
+        <p>Once we have human data, we can:</p>
+        <ol>
+            <li>Run the same feature extraction on human code</li>
+            <li>Compare human vs AI similarity distributions</li>
+            <li>Train a classifier (Random Forest or XGBoost)</li>
+            <li>Evaluate accuracy, precision, recall</li>
+        </ol>
+    </div>
+</section>
+
+</div>
+
+<footer style="background: var(--code-bg); color: white; padding: 2rem; text-align: center; margin-top: 2rem;">
+    <p>Uditi Sharma - Senior Capstone Project</p>
+    <p style="opacity: 0.7; font-size: 0.9rem;">AI Code Detection for Academic Integrity</p>
+</footer>
+
+</body>
+</html>
