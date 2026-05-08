@@ -1,0 +1,18 @@
+{
+  "generation_id": 406,
+  "timestamp": "2026-05-07T19:13:11Z",
+  "model": "@gpt-4o/o4-mini",
+  "model_short": "o4mini",
+  "style_index": 1,
+  "style_text": "Write in a simple, beginner-friendly style with clear variable names.",
+  "full_prompt": "You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:\n\n1. Create a 2D board with 7 columns and 6 rows, initialized with spaces\n2. Support exactly 2 players using checkers \"X\" and \"O\"\n3. Use constant global variables for board dimensions and number of players\n4. Randomly select which player goes first at the start\n5. Print the board with column labels A through G before the game starts and after each turn\n6. Clear the screen before printing using os.system('clear')\n7. Players input an uppercase letter (A-G) to choose a column\n8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again\n9. Drop the checker to the lowest available row in the chosen column\n10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally\n11. If the board fills with no winner, declare a draw\n12. When a player wins, print \"[Player] won!\" and end the game\n\nThe board must look exactly like this format:\n   A   B   C   D   E   F   G\n+---+---+---+---+---+---+---+\n|   |   |   |   |   |   |   |\n+---+---+---+---+---+---+---+\n|   |   |   |   |   |   |   |\n+---+---+---+---+---+---+---+\n\nProvide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.\n\nWrite in a simple, beginner-friendly style with clear variable names.",
+  "tokens_input": 391,
+  "tokens_output": 718,
+  "tokens_total": 1109,
+  "cost_usd": "0.000000",
+  "response_length_chars": 2820,
+  "response_length_lines": 99,
+  "md5_hash": "18d7f2cc536bbc7fb8e57ce30509db9b",
+  "filename": "gen_0406_o4mini_01.py",
+  "filepath": "data/raw/o4mini/gen_0406_o4mini_01.py"
+}

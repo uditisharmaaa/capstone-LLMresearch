@@ -86,7 +86,10 @@ def load_all_generated_code(data_dir: str = "data/raw") -> pd.DataFrame:
     """
     records = []
 
-    for model_dir in ['gpt4o', 'gpt4mini', 'sonnet', 'gemini', 'llama', 'opus']:
+    for model_dir in ['gpt4o', 'gpt4mini', 'sonnet', 'gemini', 'llama', 'opus',
+                      'o4mini', 'sonnet46', 'opus46']:
+        # gemini25f and gemini25p excluded: thinking model token budget consumed
+        # by reasoning, leaving truncated ~20-line code files (unusable)
         dir_path = Path(data_dir) / model_dir
         if not dir_path.exists():
             continue

@@ -1,0 +1,18 @@
+{
+  "generation_id": 227,
+  "timestamp": "2026-04-06T09:36:14Z",
+  "model": "meta-llama/llama-3.1-70b-instruct",
+  "model_short": "llama",
+  "style_index": 7,
+  "style_text": "Write in a teaching style, as if explaining to someone learning Python.",
+  "full_prompt": "You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:\n\n1. Create a 2D board with 7 columns and 6 rows, initialized with spaces\n2. Support exactly 2 players using checkers \"X\" and \"O\"\n3. Use constant global variables for board dimensions and number of players\n4. Randomly select which player goes first at the start\n5. Print the board with column labels A through G before the game starts and after each turn\n6. Clear the screen before printing using os.system('clear')\n7. Players input an uppercase letter (A-G) to choose a column\n8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again\n9. Drop the checker to the lowest available row in the chosen column\n10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally\n11. If the board fills with no winner, declare a draw\n12. When a player wins, print \"[Player] won!\" and end the game\n\nThe board must look exactly like this format:\n   A   B   C   D   E   F   G\n+---+---+---+---+---+---+---+\n|   |   |   |   |   |   |   |\n+---+---+---+---+---+---+---+\n|   |   |   |   |   |   |   |\n+---+---+---+---+---+---+---+\n\nProvide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.\n\nWrite in a teaching style, as if explaining to someone learning Python.",
+  "tokens_input": 395,
+  "tokens_output": 915,
+  "tokens_total": 1310,
+  "cost_usd": "0.000892",
+  "response_length_chars": 3650,
+  "response_length_lines": 117,
+  "md5_hash": "6d2c304cc9b654e9f752a035122df92a",
+  "filename": "gen_0227_llama_07.py",
+  "filepath": "data/raw/llama/gen_0227_llama_07.py"
+}

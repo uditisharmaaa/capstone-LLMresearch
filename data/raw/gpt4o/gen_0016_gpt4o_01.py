@@ -42,7 +42,7 @@
 #   Write in a simple, beginner-friendly style with clear variable names.
 # ====================================================================
 
-```python
+
 import os
 import random
 
@@ -134,4 +134,3 @@ def play_game():
         current_player = (current_player + 1) % PLAYERS
 
 play_game()
-```

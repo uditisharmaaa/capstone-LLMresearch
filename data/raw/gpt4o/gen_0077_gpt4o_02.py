@@ -42,7 +42,7 @@
 #   Write in a compact style, minimizing lines of code.
 # ====================================================================
 
-```python
+
 import os
 import random
 
@@ -105,4 +105,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

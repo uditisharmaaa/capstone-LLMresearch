@@ -1,227 +1,162 @@
-# CLAUDE.md - Project Context for AI Assistant
+# CLAUDE.md
 
-## Project Overview
+---
 
-This is Uditi's senior year capstone project on **detecting AI-generated code in academic submissions**. The project focuses on **specific intro CS assignments** where we have both pre-ChatGPT student submissions and AI-generated solutions.
+## Project
 
-**Key constraint:** This is NOT a general-purpose AI detector. It only works for assignments where we have:
-1. Pre-ChatGPT human submissions (from professor's archive, ~2019 or earlier)
-2. AI-generated solutions (that we generate ourselves)
+Uditi's senior capstone — a **scientific paper** on detecting AI-generated code in intro CS assignments (Connect4, Tic-Tac-Toe, Hangman). The deliverable is a publishable research contribution, not just a working tool.
 
-## Project Scope
+The system compares submissions against known human and AI baselines to produce probability scores. Scope is intentionally narrow: only works for assignments where pre-ChatGPT human submissions exist as a reference.
 
-### What We're Building
-- Detection system for **specific intro CS assignments**
-- Compares new submissions against known human and AI baselines
-- Outputs similarity scores and probability estimates
-- Target assignments: Connect4, Tic-Tac-Toe, Hangman (intro CS level)
+---
 
-### What We're NOT Building
-- General-purpose AI code detector
-- System that works on arbitrary/unseen assignments
-- Binary "guilty/innocent" classifier (we provide probabilities)
+## How to Work on This Project
 
-## Current Status
+### Scientific rigor
+- Before stating a claim, argue against it internally. If it doesn't hold up, say so.
+- Verify that statistical claims are correct (correct test, correct assumptions, not overstated).
+- Don't dress up weak results. If something is inconclusive, say it's inconclusive.
+- Compare against prior work honestly — our advantage over Hoq & Leinonen is multi-model coverage, not that we're universally better.
 
-### Phase 1: Data Collection ✅ COMPLETE
-- **100 AI-generated Connect4 solutions**
-  - 70 from GPT-4o
-  - 20 from GPT-4o Mini  
-  - 10 from Claude 3.5 Sonnet
-- 15 coding style variations applied
-- All stored in `data/raw/{model}/`
-- Metadata in `data/metadata.csv`
-- Cost: $0.73 total
+### Literature and research
+- All confirmed papers live in `research/papers.md`. Read it before any literature discussion.
+- Confirmed papers are in `research/papers.md` (9 papers). Always read that file before any literature discussion and verify any new citations via web search before adding them.
+- Never cite or describe a paper from memory alone — hallucinated citations are a serious research integrity failure. Always verify title, authors, venue, year, and core claims via web search before referencing.
+- Search proactively: AI code detection, authorship attribution, code stylometry, plagiarism detection, LLM output detection, CS education and academic integrity. Don't wait to be asked.
+- Use `/find-papers` to run a structured search and add verified papers to `research/papers.md`.
 
-### Phase 2: Feature Extraction ✅ COMPLETE
-- **Lexical features** (553 features): TF-IDF, keyword frequencies, line metrics, naming patterns
-- **Structural features** (69 features): AST depth, node counts, cyclomatic complexity, control flow
-- **Semantic features** (768 features): CodeBERT embeddings
-- All extractors in `src/features/`
+### Code quality
+- No bloated code. No abstractions that aren't earned. Three similar lines beats a premature abstraction.
+- No unnecessary comments. Code should be readable by its structure and naming.
+- No error handling for things that can't happen. No fallbacks for internal logic.
+- Before adding anything, check if it conflicts with or duplicates what's already in the codebase.
+- Follow PEP 8. Keep functions small and focused.
 
-### Phase 3: Similarity Analysis ✅ COMPLETE
-- Pairwise similarity matrices computed
-- Edit distance analysis (replicating Hoq & Leinonen methodology)
-- Statistical tests run (Mann-Whitney U, Cohen's d)
-- Visualizations generated in `results/figures/`
+### Communication
+- No sycophancy. Don't validate bad ideas. Push back when something is wrong or weak.
+- Explain ML/stats concepts simply — intuition first, then mechanics.
+- Don't summarize what was just done. Be terse.
 
-### Phase 4: Human Data Integration ⏳ WAITING
-- Need pre-ChatGPT student submissions from professor
-- Expected "within a few days" (as of April 5, 2026)
-- Will be Connect4 submissions from 2019 or earlier
+### CLAUDE.md
+- Update this file automatically whenever the project state changes (new data, new phases complete, new findings, new files).
 
-### Phase 5: Classification Model 🔜 TODO
-- Train Random Forest / XGBoost on combined features
-- Evaluate accuracy, precision, recall, F1
-- Priority: High precision (minimize false accusations)
+---
 
-## Key Findings So Far
+## Role
 
-### Finding 1: Different AI Models Have Distinguishable Fingerprints
-| Model | Within-Model Similarity (TF-IDF) |
-|-------|----------------------------------|
-| Claude (Sonnet) | 0.883 (most consistent) |
-| GPT-4o Mini | 0.831 |
-| GPT-4o | 0.785 (most varied) |
+Help across all dimensions:
+- **Research** — suggest experiments, identify weak points in methodology, find novel angles
+- **Concepts** — explain ML, stats, NLP at a beginner level when needed
+- **Coding** — implement cleanly and correctly; check the codebase before writing anything new
+- **Paper** — structure arguments, write clearly, hold a high bar (not AI slop)
 
-All pairwise comparisons are **highly significant** (p < 0.001).
+---
 
-### Finding 2: CodeBERT Shows Strong Model Separation
-- Within-model vs between-model: p = 1.38e-93
-- Cohen's d = 0.57 (medium effect)
+## Paper Direction
 
-### Finding 3: Statistical Confirmation
-Different AI models produce statistically distinguishable code patterns. This is novel - the Hoq paper only tested one model (ChatGPT).
+Two research questions — both will be in the final paper:
 
-## Related Work
+**RQ1 (answerable now): Multi-model fingerprinting** — Do different AI models leave statistically distinguishable stylistic fingerprints in CS1 assignments? Analysis complete on 423 samples across 9 models. This is the novel primary contribution — no prior paper does multi-model fingerprinting at this scale on assignment-specific code.
 
-### Hoq & Leinonen (SIGCSE 2024)
-- Paper: "Detecting ChatGPT-Generated Code Submissions in a CS1 Course"
-- Their approach: Binary classification with SVM, XGBoost, ASTNN, SANN
-- Their best result: 97% accuracy with SANN
-- Their limitation: Only tested ChatGPT, simple 10-line Java problems
+**RQ2 (pending human data): AI vs. Human detection** — Can those fingerprints reliably distinguish AI-generated code from pre-ChatGPT student submissions? Requires professor's pre-2022 Connect4 submissions. Once that arrives: Random Forest / XGBoost classifier with probability scores (not binary labels).
 
-### How We Differ
-| Aspect | Hoq & Leinonen | Our Project |
-|--------|----------------|-------------|
-| AI Models | ChatGPT only | GPT-4o, GPT-4o Mini, Claude |
-| Language | Java | Python |
-| Complexity | ~10 lines | ~93 lines (Connect4) |
-| Output | Binary yes/no | Probability scores |
-| Features | TF-IDF + AST | + CodeBERT embeddings |
+The paper covers both. RQ1 is the methodological foundation; RQ2 is the applied payoff.
 
-## Technical Stack
+---
 
-```
-Python 3.9+
-├── Data: pandas, numpy, pyarrow (parquet)
-├── ML: scikit-learn, transformers, torch
-├── Visualization: matplotlib, seaborn
-├── Code Analysis: ast (stdlib), radon
-├── Statistics: scipy
-├── Text: python-Levenshtein
-```
+## Data ✅
 
-## Project Structure
+**AI-generated Connect4 solutions in `data/raw/`:**
 
-```
-capstone/
-├── pipeline.py              # Data generation (Phase 1)
-├── run_analysis.py          # Main analysis script
-├── CLAUDE.md                # THIS FILE
-├── PROJECT_GUIDE.md         # Simple overview for user
-│
-├── data/
-│   ├── raw/                 # AI-generated code
-│   │   ├── gpt4o/           # 70 files
-│   │   ├── gpt4mini/        # 20 files
-│   │   └── sonnet/          # 10 files
-│   ├── metadata.csv         # Generation metadata
-│   └── student_submissions/ # [FUTURE] Human code
-│
-├── src/
-│   ├── utils/preprocessing.py
-│   ├── features/
-│   │   ├── lexical.py       # TF-IDF, keywords, etc.
-│   │   ├── structural.py    # AST analysis
-│   │   └── semantic.py      # CodeBERT embeddings
-│   └── similarity/
-│       ├── analysis.py      # Similarity computation
-│       └── visualization.py # Plotting
-│
-├── results/
-│   ├── figures/             # All generated plots
-│   ├── analysis_report.txt
-│   ├── lexical_features.parquet
-│   ├── structural_features.parquet
-│   └── codebert_embeddings.npy
-│
-└── docs/
-    ├── index.html           # Project documentation
-    └── COMPLETE_TUTORIAL.html # ML/NLP tutorial for user
-```
+| Model | Era | Count | Directory | Notes |
+|-------|-----|-------|-----------|-------|
+| GPT-4o | 2024 | 70 | `gpt4o/` | |
+| GPT-4o Mini | 2024 | 50 | `gpt4mini/` | |
+| Claude Sonnet 3.5 | 2024 | 50 | `sonnet/` | |
+| Gemini 2.0 Flash | 2024 | 50 | `gemini/` | |
+| Llama 3.1 70B | 2024 | 50 | `llama/` | |
+| Claude Opus 4.5 | 2025 | 28 | `opus/` | via OpenRouter |
+| o4-mini | 2025 | 43 | `o4mini/` | via NYU Portkey |
+| Claude Sonnet 4.6 | 2025 | 41 | `sonnet46/` | via NYU Portkey |
+| Claude Opus 4.6 | 2025 | 41 | `opus46/` | via NYU Portkey |
+| Gemini 2.5 Flash | 2025 | 29 | `gemini25f/` | EXCLUDED — truncated (~20 lines); thinking tokens exhausted budget |
+| Gemini 2.5 Pro | 2025 | 28 | `gemini25p/` | EXCLUDED — same issue |
 
-## Key Files to Know
+**Total valid for analysis: 423 files across 9 models.** 15 style variations per model. Metadata in `data/metadata.csv`. Generated via OpenRouter (Phase 1–2) and NYU Portkey AI Gateway (Phase 3–4).
 
-### pipeline.py
-- Generates AI code via OpenRouter API
-- Applies 15 style variations
-- Saves with provenance headers
-- Can resume interrupted runs
+**Fix for Gemini 2.5 regeneration (next semester):** Use `max_tokens=10000+` to leave budget for code after thinking tokens.
 
-### run_analysis.py
-- Main entry point for analysis
-- Run with `python run_analysis.py`
-- Use `--skip-embeddings` for faster runs without CodeBERT
+---
 
-### src/features/semantic.py
-- CodeBERT embedding extraction
-- Requires torch and transformers
-- Uses `microsoft/codebert-base` model
-- Outputs 768-dim vectors
+## Phases
 
-## User Context
+| Phase | Status | Notes |
+|-------|--------|-------|
+| 1 — Data collection (original) | ✅ | 285 files, 6 models, via OpenRouter |
+| 2 — Feature extraction | ✅ | Lexical (553), structural (120), TF-IDF in `src/features/` |
+| 3 — Similarity analysis | ✅ | 423-sample run. Pairwise TF-IDF + edit distance, Mann-Whitney U, Cohen's d. Results in `results/` |
+| 3b — Phase 3 data (2025 models) | ✅ | 153 new files (o4mini ×43, sonnet46 ×41, opus46 ×41, opus ×28) via NYU Portkey + OpenRouter |
+| 4 — Human data | ⏳ | Pre-2022 Connect4 submissions in hand from professor; integration planned Fall 2026 |
+| 5 — Multi-model classifier | 🔜 | Random Forest / XGBoost on 423 samples — Fall 2026 |
+| 6 — AI vs Human classifier | 🔜 | Requires Phase 4 human data; probability scores not binary labels — Fall 2026 |
+| 7 — Abstract / proposal | ✅ | Submitted. Revised with threats to validity, RQ2 methodology, cross-generation analysis, sample size caveats. `docs/proposal.tex` |
+| 8 — Full scientific paper | 🔜 | Fall 2026 |
 
-- **User:** Uditi Sharma (senior CS student)
-- **Project type:** Senior capstone
-- **Advisor:** Professor (has pre-ChatGPT student submissions)
-- **User's ML background:** Beginner - needs concepts explained simply
-- **User's goal:** Understand project well enough to present and defend to professor
+---
 
-## Important Constraints
+## Key Findings (423-sample TF-IDF analysis, May 2026)
 
-1. **No general AI detection** - Only works for specific assignments with both human and AI baselines
-2. **Minimize false positives** - Accusing innocent students is very costly
-3. **Probability scores, not binary** - More transparent and fair
-4. **Pre-ChatGPT baseline required** - Human submissions must be from before Nov 2022
+**Dataset:** 423 Connect4 Python files across 9 models (Gemini 2.5 Flash/Pro excluded — thinking token budget consumed output; generated ~20-line truncated files).
 
-## Next Steps (When Human Data Arrives)
+**Within-model TF-IDF similarity (mean ± std):**
+| Model | Era | N | Mean | Std |
+|-------|-----|---|------|-----|
+| GPT-4o Mini | 2024 | 50 | 0.833 | 0.071 |
+| Claude Sonnet 3.5 | 2024 | 50 | 0.819 | 0.062 |
+| Claude Opus 4.5 | 2025 | 28 | 0.804 | 0.148 |
+| o4-mini | 2025 | 43 | 0.800 | 0.073 |
+| GPT-4o | 2024 | 70 | 0.800 | 0.106 |
+| Claude Opus 4.6 | 2025 | 41 | 0.793 | 0.109 |
+| Gemini 2.0 Flash | 2024 | 50 | 0.780 | 0.118 |
+| Llama 3.1 70B | 2024 | 50 | 0.772 | 0.113 |
+| Claude Sonnet 4.6 | 2025 | 41 | 0.710 | 0.165 |
 
-1. Load and preprocess student submissions
-2. Extract same features (lexical, structural, semantic)
-3. Compute cross-group similarities (AI vs human)
-4. Test main hypothesis: Does AI code cluster separately from human code?
-5. Train classifier if hypothesis confirmed
-6. Evaluate and document results
+**Overall within vs. between-model:** mean diff = 0.074, Cohen's d = 0.720, p ≈ 0.
 
-## Commands to Remember
+**Non-significant pairs (3):** GPT-4o Mini vs. Claude Opus 4.5 (p = 0.210), Claude Opus 4.5 vs. Claude Sonnet 3.5 (p = 0.467), Gemini vs. Llama (p = 0.314). 27 of 36 pairs significant at p < 0.001; 33 of 36 at any level.
+
+**Novel contribution:** Prior work tested 1 model (Hoq et al. on Java CS1 programs; Xu & Sheng on competitive programming; GPTSniffer on ~10-line GitHub snippets). We test 9 models spanning 2024–2025 on ~110-line Python Connect4 implementations — the first multi-model fingerprinting study on assignment-specific CS1 code.
+
+**Cross-generation note:** 2025-era models show mixed diversity patterns — o4-mini (std 0.073) is as tight as GPT-4o Mini, but Claude Sonnet 4.6 (std 0.165) is far more variable than its 2024 counterpart Sonnet 3.5 (std 0.062). Flagged for future analysis.
+
+**Sample size caveat:** Claude Opus 4.5 n=28 is the smallest sample; its comparisons have lower statistical power. The GPT-4o Mini vs. Claude Opus 4.5 non-significance (p=0.210) may partly reflect this.
+
+---
+
+## Commands
 
 ```bash
-# Run full analysis with CodeBERT
-python run_analysis.py
-
-# Run fast analysis (skip embeddings)
-python run_analysis.py --skip-embeddings
-
-# View documentation
-open docs/COMPLETE_TUTORIAL.html
-
-# Check results
-ls results/figures/
-cat results/analysis_report.txt
+python run_analysis.py                    # full analysis (includes CodeBERT)
+python run_analysis.py --skip-embeddings  # faster, skips CodeBERT
 ```
 
-## Questions the Professor Might Ask
+---
 
-1. "Why similarity-based instead of direct classification?"
-   → More transparent, provides probabilities, adapts to new models
+## Constraints
 
-2. "How do you handle students who modify AI code?"
-   → Multi-feature approach: even if names change, AST and semantics may persist
+- False positives are very costly — prioritize precision over recall
+- Output probability scores, not binary guilty/not-guilty
+- Human baseline must be pre-November 2022 (pre-ChatGPT)
 
-3. "What's your false positive rate?"
-   → TBD - need human data to calculate. We prioritize precision over recall.
+---
 
-4. "Does this generalize to other assignments?"
-   → No - this is assignment-specific by design. That's the scope.
+## Schedule
 
-5. "How is this different from MOSS?"
-   → MOSS compares submissions to each other. We compare against AI baseline.
+- **Spring 2026 (current):** Proposal submitted. RQ1 analysis complete. Light semester — main deliverable was the proposal.
+- **Fall 2026:** Full capstone work — RQ2 classifier, human baseline integration, paper writing, defense.
 
-## Notes for Future Sessions
+---
 
-- User prefers simple, non-mathematical explanations
-- User needs to present to professor - help them understand deeply, not just use tools
-- The project scope is intentionally narrow (specific assignments only)
-- Pre-ChatGPT data is the critical missing piece right now
-- All 100 generated files are syntactically valid (8 were fixed from markdown blocks)
+## User
+
+Uditi Sharma, senior CS student, beginner in ML. Explain with intuition first. The goal is deep understanding, not just using tools — she needs to defend this to her professor and write a real paper.

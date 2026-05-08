@@ -42,7 +42,7 @@
 #   Write with extensive docstrings for every function.
 # ====================================================================
 
-```python
+
 import os
 import random
 
@@ -143,4 +143,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```

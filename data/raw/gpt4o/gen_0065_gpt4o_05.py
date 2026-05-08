@@ -42,7 +42,7 @@
 #   Write with descriptive function names and minimal comments.
 # ====================================================================
 
-```python
+
 import os
 import random
 
@@ -141,4 +141,3 @@ def play_game():
 
 if __name__ == "__main__":
     play_game()
-```

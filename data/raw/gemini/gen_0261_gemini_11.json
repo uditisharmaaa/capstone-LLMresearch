@@ -1,0 +1,18 @@
+{
+  "generation_id": 261,
+  "timestamp": "2026-04-06T10:27:12Z",
+  "model": "google/gemini-2.0-flash-001",
+  "model_short": "gemini",
+  "style_index": 11,
+  "style_text": "Write with extensive docstrings for every function.",
+  "full_prompt": "You are a first-year computer science student completing a programming assignment. Write a complete Python3 implementation of the Connect 4 game with the following requirements:\n\n1. Create a 2D board with 7 columns and 6 rows, initialized with spaces\n2. Support exactly 2 players using checkers \"X\" and \"O\"\n3. Use constant global variables for board dimensions and number of players\n4. Randomly select which player goes first at the start\n5. Print the board with column labels A through G before the game starts and after each turn\n6. Clear the screen before printing using os.system('clear')\n7. Players input an uppercase letter (A-G) to choose a column\n8. Validate all input: reject letters outside A-G, reject full columns, reject non-letter input - do NOT end the turn on invalid input, ask again\n9. Drop the checker to the lowest available row in the chosen column\n10. After each move, check for a win: 4 in a row horizontally, vertically, or diagonally\n11. If the board fills with no winner, declare a draw\n12. When a player wins, print \"[Player] won!\" and end the game\n\nThe board must look exactly like this format:\n   A   B   C   D   E   F   G\n+---+---+---+---+---+---+---+\n|   |   |   |   |   |   |   |\n+---+---+---+---+---+---+---+\n|   |   |   |   |   |   |   |\n+---+---+---+---+---+---+---+\n\nProvide ONLY the complete Python code. No explanations, no markdown code blocks, just raw Python code starting with import statements.\n\nWrite with extensive docstrings for every function.",
+  "tokens_input": 375,
+  "tokens_output": 1137,
+  "tokens_total": 1512,
+  "cost_usd": "0.000492",
+  "response_length_chars": 3845,
+  "response_length_lines": 142,
+  "md5_hash": "0f73b968d04d44c6539e2237e27c52c4",
+  "filename": "gen_0261_gemini_11.py",
+  "filepath": "data/raw/gemini/gen_0261_gemini_11.py"
+}

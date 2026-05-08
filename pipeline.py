@@ -45,23 +45,33 @@ HEADERS = {
     "X-Title": "Capstone Research Pipeline",
 }
 
-TOTAL_GENERATIONS   = 100
+TOTAL_GENERATIONS   = 185   # New batch: 185 additional samples
+START_ID            = 101   # Continue from where we left off
 DELAY_BETWEEN_CALLS = 1.5   # seconds between successful calls
 RETRY_DELAY         = 5.0   # seconds before retry on failure
 PROGRESS_INTERVAL   = 50    # print summary every N completions
 
 # Model definitions – counts must sum to TOTAL_GENERATIONS
+# Phase 2: Adding new models and balancing existing ones
 MODELS = [
-    {"name": "openai/gpt-4o",               "short": "gpt4o",    "count": 70},
-    {"name": "openai/gpt-4o-mini",          "short": "gpt4mini", "count": 20},
-    {"name": "anthropic/claude-3.5-sonnet", "short": "sonnet",   "count": 10},
+    # Existing models - adding more to balance
+    {"name": "openai/gpt-4o-mini",          "short": "gpt4mini", "count": 30},   # 20→50
+    {"name": "anthropic/claude-3.7-sonnet", "short": "sonnet",   "count": 40},   # 10→50 (fixed name)
+    # New models
+    {"name": "google/gemini-2.0-flash-001", "short": "gemini",   "count": 50},   # 0→50 (fixed name)
+    {"name": "meta-llama/llama-3.1-70b-instruct", "short": "llama", "count": 50}, # 0→50
+    {"name": "anthropic/claude-opus-4.5",   "short": "opus",     "count": 15},   # 0→15 (fixed name)
 ]
 
 # Approximate cost rates per 1 K tokens (input / output)
 COST_PER_1K = {
-    "openai/gpt-4o":                {"input": 0.0025,  "output": 0.01},
-    "openai/gpt-4o-mini":           {"input": 0.00015, "output": 0.0006},
-    "anthropic/claude-3.5-sonnet":  {"input": 0.003,   "output": 0.015},
+    "openai/gpt-4o":                      {"input": 0.0025,  "output": 0.01},
+    "openai/gpt-4o-mini":                 {"input": 0.00015, "output": 0.0006},
+    "anthropic/claude-3.5-sonnet":        {"input": 0.003,   "output": 0.015},
+    "anthropic/claude-3.7-sonnet":        {"input": 0.003,   "output": 0.015},
+    "google/gemini-2.0-flash-001":        {"input": 0.0001,  "output": 0.0004},   # Very cheap!
+    "anthropic/claude-opus-4.5":          {"input": 0.005,   "output": 0.025},    # Premium
+    "meta-llama/llama-3.1-70b-instruct":  {"input": 0.00052, "output": 0.00075},
 }
 
 STYLES = [
@@ -235,7 +245,7 @@ def build_plan() -> list:
         sidx, stext = STYLES[i % len(STYLES)]
         full_prompt = BASE_PROMPT + "\n\n" + stext
         tasks.append({
-            "id":          i + 1,
+            "id":          START_ID + i,  # Continue from START_ID (101)
             "model_name":  model["name"],
             "model_short": model["short"],
             "style_index": sidx,

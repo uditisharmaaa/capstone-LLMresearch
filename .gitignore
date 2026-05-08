@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 *.pyo
 .DS_Store
+.claude/
+data/metadata_backup.csv
