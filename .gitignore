@@ -5,3 +5,4 @@ __pycache__/
 .DS_Store
 .claude/
 data/metadata_backup.csv
+CLAUDE.md
