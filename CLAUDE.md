@@ -97,9 +97,11 @@ The paper covers both. RQ1 is the methodological foundation; RQ2 is the applied 
 | 3 — Similarity analysis | ✅ | 423-sample run. Pairwise TF-IDF + edit distance, Mann-Whitney U, Cohen's d. Results in `results/` |
 | 3b — Phase 3 data (2025 models) | ✅ | 153 new files (o4mini ×43, sonnet46 ×41, opus46 ×41, opus ×28) via NYU Portkey + OpenRouter |
 | 4 — Human data | ⏳ | Pre-2022 Connect4 submissions in hand from professor; integration planned Fall 2026 |
-| 5 — Multi-model classifier | 🔜 | Random Forest / XGBoost on 423 samples — Fall 2026 |
+| 4b — Dataset expansion | 🔜 | Expand AI dataset from 423 to ~10,000 files (~1,100 per model) before RQ2 training — Fall 2026, budget permitting |
+| 5 — Multi-model classifier | 🔜 | Random Forest / XGBoost — Fall 2026 |
+| 5b — Human baseline similarity analysis | 🔜 | Run same TF-IDF analysis on human submissions before training (H4); confirms feature space separability — Fall 2026 |
 | 6 — AI vs Human classifier | 🔜 | Requires Phase 4 human data; probability scores not binary labels — Fall 2026 |
-| 7 — Abstract / proposal | ✅ | Submitted. Revised with threats to validity, RQ2 methodology, cross-generation analysis, sample size caveats. `docs/proposal.tex` |
+| 7 — Abstract / proposal | ✅ | Submitted. Revised with threats to validity, RQ2 methodology, cross-generation analysis, sample size caveats, H4 hypothesis, budget. `docs/proposal.tex` |
 | 8 — Full scientific paper | 🔜 | Fall 2026 |
 
 ---
@@ -131,6 +133,8 @@ The paper covers both. RQ1 is the methodological foundation; RQ2 is the applied 
 
 **Sample size caveat:** Claude Opus 4.5 n=28 is the smallest sample; its comparisons have lower statistical power. The GPT-4o Mini vs. Claude Opus 4.5 non-significance (p=0.210) may partly reflect this.
 
+**H4 (planned Fall 2026):** Within-human TF-IDF cosine similarity is expected to be significantly lower than the mean within-model AI similarity (0.793), confirming that human-written code is more variable than any single model's output. This is the prerequisite check for RQ2 — if not confirmed, the classifier design needs rethinking.
+
 ---
 
 ## Commands
@@ -153,7 +157,15 @@ python run_analysis.py --skip-embeddings  # faster, skips CodeBERT
 ## Schedule
 
 - **Spring 2026 (current):** Proposal submitted. RQ1 analysis complete. Light semester — main deliverable was the proposal.
-- **Fall 2026:** Full capstone work — RQ2 classifier, human baseline integration, paper writing, defense.
+- **Fall 2026:** Full capstone work — expand AI dataset to ~10k files, integrate human baseline, run H4 similarity analysis, train RQ2 classifier, paper writing, defense.
+
+## Budget
+
+- **Requested: $1,530** for API data collection contingency (if NYU Portkey access unavailable Fall 2026)
+- Breakdown: $340 per assignment × 3 assignments = $1,020 base, $510 contingency (50%)
+- 6,000 files per assignment (~667 per model) — uniform scale across all 3 assignments
+- Dominated by Opus 4.5 + Opus 4.6 (~$260 per assignment, $780 across three)
+- If Portkey continues: $0 spent; budget is a contingency only
 
 ---
 
